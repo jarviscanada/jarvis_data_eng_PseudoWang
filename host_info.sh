@@ -10,7 +10,7 @@ total_mem=$(cat /proc/meminfo | egrep MemTotal | awk '{print $2}' | xargs)
 hostname=$(hostname -f)
 timestamp=$(date -u "+%Y-%m-%d %T")
 
-echo -----testing output-----
+# testing output
 echo $cpu_number
 echo $cpu_architecture
 echo $cpu_model
