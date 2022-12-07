@@ -1,2 +1,15 @@
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
 .DS_Store
-*\.DS_Store
+*/.DS_Store
+.eclipse
+*/.eclipse
+.idea/
+*/.idea/
+.vscode/
+*/.vscode/
