@@ -12,11 +12,13 @@ public class Queue<E> {
     int head;
     int tail;
 
+    @SuppressWarnings("unchecked")
     public Queue() {
         arr = (E[]) new Object[range];
     }
 
     // Specific capacity
+    @SuppressWarnings("unchecked")
     public Queue(int capacity) {
         range = capacity;
         arr = (E[]) new Object[capacity + 1];
