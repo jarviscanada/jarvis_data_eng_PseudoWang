@@ -1,0 +1,89 @@
+# Preferred name (Characters only)
+name: "Pseudo Wang"
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_PseudoWang
+
+summary: "My name is Pseudo Wang. I graduated from York University in October 2022 with a degree in Computer Science."
+
+skills:
+  proficient:
+    - Git
+    - Java
+    - Nginx
+    - NodeJS
+    - SQL/NoSQL
+    - Linux/Bash
+    - Agile/Scrum
+  competent:
+    - React
+    - Angular
+    - ExpressJS
+    - Vue3/Vite
+    - AWS/Azure/OracleCloud
+  familiar:
+    - Python
+    - Kotlin
+    - C Language
+    - Flask/Django
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    description: ""
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App"
+      - "JDBC App"
+      - "Grep App"
+  # - name: "Springboot App"
+  #   git_url: "/springboot"
+  #   description: ""
+  # - name: "Python Data Analytics"
+  #   git_url: "/python_data_anlytics"
+  #   description: ""
+  # - name: "Hadoop"
+  #   git_url: "/hadoop"
+  #   description: ""
+  # - name: "Spark"
+  #   git_url: "/spark"
+  #   description: ""
+  # - name: "Cloud/DevOps"
+  #   git_url: "/cloud_devops"
+  #   description: ""
+
+highlighted_projects:
+  - name: "Combined Website Framework"
+    git_url: "https://github.com/WuWaA/Combined-Website-Framework"
+    description: "A Full-Stack project can be deployed on the cloud server such as AWS. The back-end server uses Node.js, and the database uses MongoDB. The front-end uses Express Framework with Webpack, applied Google Material Design, contains User Verification System, Injection Protection, etc."
+  - name: "GUI Othello Game"
+    git_url: "https://github.com/WuWaA/Othello-Game"
+    description: "A GUI Othello Game that can be played as Player vs. Player or Player vs. Machine locally. Using JavaFX as GUI framework. Applied the MVC model with several design patterns. Designed two different machine playing strategies."
+
+professional_experience:
+  - title: "Web Developer"
+    company: "Emerge Labs"
+    duration: "2016-2017"
+    description: "Collaborate with designers to analyze client needs and create innovative interactive websites, one of them is: http://gongdaixie.com"
+  - title: "Computer Science Lecturer"
+    company: "Future Up Inc"
+    duration: "2019-2020"
+    description: "Reinforce knowledge of Java data structures taught at York University and help students achieve top 10% in their class."
+
+education: 
+  - school_name: "York University"
+    duration: "2018-2022"
+    degree: "Bachelor of Sciences"
+    department: "Computer Science"
+    # awards_achievements: 
+    #   - "Scholarship"
+    #   - "GPA: 3.6/4.0"
+
+others:
+  - title: "Certificates"
+    bullets:
+      - "Enterprise Design Thinking by IBM (2022)"
+  - title: "Activities"
+    bullets:
+      - "Video Editing"
+      - "Competitive Algorithm Coding"
