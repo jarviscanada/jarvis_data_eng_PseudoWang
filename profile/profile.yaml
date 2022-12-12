@@ -20,10 +20,11 @@ skills:
     - Vue3/Vite
     - AWS/Azure/OracleCloud
   familiar:
+    - Flask
     - Python
     - Kotlin
+    - Django
     - C Language
-    - Flask/Django
 
 # List of Jarvis projects
 jarvis_projects:
@@ -75,7 +76,7 @@ education:
     duration: "2018-2022"
     degree: "Bachelor of Sciences"
     department: "Computer Science"
-    # awards_achievements: 
+    awards_achievements:
     #   - "Scholarship"
     #   - "GPA: 3.6/4.0"
 

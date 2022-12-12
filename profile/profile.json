@@ -1,0 +1,96 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Sciences",
+      "department": "Computer Science",
+      "duration": "2018-2022",
+      "school_name": "York University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_PseudoWang",
+  "highlighted_projects": [
+    {
+      "description": "A Full-Stack project can be deployed on the cloud server such as AWS. The back-end server uses Node.js, and the database uses MongoDB. The front-end uses Express Framework with Webpack, applied Google Material Design, contains User Verification System, Injection Protection, etc.",
+      "git_url": "https://github.com/WuWaA/Combined-Website-Framework",
+      "name": "Combined Website Framework"
+    },
+    {
+      "description": "A GUI Othello Game that can be played as Player vs. Player or Player vs. Machine locally. Using JavaFX as GUI framework. Applied the MVC model with several design patterns. Designed two different machine playing strategies.",
+      "git_url": "https://github.com/WuWaA/Othello-Game",
+      "name": "GUI Othello Game"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "Twitter App",
+        "JDBC App",
+        "Grep App"
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    }
+  ],
+  "name": "Pseudo Wang",
+  "others": [
+    {
+      "bullets": [
+        "Enterprise Design Thinking by IBM (2022)"
+      ],
+      "title": "Certificates"
+    },
+    {
+      "bullets": [
+        "Video Editing",
+        "Competitive Algorithm Coding"
+      ],
+      "title": "Activities"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Emerge Labs",
+      "description": "Collaborate with designers to analyze client needs and create innovative interactive websites, one of them is: http://gongdaixie.com",
+      "duration": "2016-2017",
+      "title": "Web Developer"
+    },
+    {
+      "company": "Future Up Inc",
+      "description": "Reinforce knowledge of Java data structures taught at York University and help students achieve top 10% in their class.",
+      "duration": "2019-2020",
+      "title": "Computer Science Lecturer"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "React",
+      "Angular",
+      "ExpressJS",
+      "Vue3/Vite",
+      "AWS/Azure/OracleCloud"
+    ],
+    "familiar": [
+      "Flask",
+      "Python",
+      "Kotlin",
+      "Django",
+      "C Language"
+    ],
+    "proficient": [
+      "Git",
+      "Java",
+      "Nginx",
+      "NodeJS",
+      "SQL/NoSQL",
+      "Linux/Bash",
+      "Agile/Scrum"
+    ]
+  },
+  "summary": "My name is Pseudo Wang. I graduated from York University in October 2022 with a degree in Computer Science."
+}
