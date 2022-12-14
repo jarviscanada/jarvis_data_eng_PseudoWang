@@ -6,16 +6,16 @@ My name is Pseudo Wang. I graduated from York University in October 2022 with a 
 
 **Proficient:** Git, Java, Nginx, NodeJS, SQL/NoSQL, Linux/Bash, Agile/Scrum
 
-**Competent:** React, Angular, ExpressJS, Vue3/Vite, AWS/Azure/OracleCloud
+**Competent:** React, Angular, Vue/Vite, ExpressJS, C Language, AWS/Azure/OracleCloud
 
-**Familiar:** Flask, Python, Kotlin, Django, C Language
+**Familiar:** Flask, Python, Kotlin, Django, Android
 
 ## Jarvis Projects
 
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PseudoWang](https://github.com/jarviscanada/jarvis_data_eng_PseudoWang)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PseudoWang/tree/master/linux_sql)]: Not Started
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PseudoWang/tree/master/linux_sql)]: This project is used to recording the hardware specifications in real-time and storing data into an RDBMS.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PseudoWang/tree/master/core_java)]:
       
@@ -28,6 +28,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PseudoWang
 **Combined Website Framework** [[GitHub](https://github.com/WuWaA/Combined-Website-Framework)]: A Full-Stack project can be deployed on the cloud server such as AWS. The back-end server uses Node.js, and the database uses MongoDB. The front-end uses Express Framework with Webpack, applied Google Material Design, contains User Verification System, Injection Protection, etc.
 
 **GUI Othello Game** [[GitHub](https://github.com/WuWaA/Othello-Game)]: A GUI Othello Game that can be played as Player vs. Player or Player vs. Machine locally. Using JavaFX as GUI framework. Applied the MVC model with several design patterns. Designed two different machine playing strategies.
+
+**Command-Line Chatroom** [[GitHub](https://github.com/WuWaA/Online-Chatroom-CLI)]: An Internet-Based Command-Line Chatroom, build by C Language and involving underlying network transmission. The project contains custom socket, server side, and client side.
 
 
 ## Professional Experiences
@@ -42,6 +44,6 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PseudoWang
 
 
 ## Miscellaneous
-- Enterprise Design Thinking by IBM (2022)
-- Video Editing
+- Enterprise Design Thinking Certificates by IBM (2022)
 - Competitive Algorithm Coding
+- Video Editing

@@ -16,21 +16,22 @@ skills:
   competent:
     - React
     - Angular
+    - Vue/Vite
     - ExpressJS
-    - Vue3/Vite
+    - C Language
     - AWS/Azure/OracleCloud
   familiar:
     - Flask
     - Python
     - Kotlin
     - Django
-    - C Language
+    - Android
 
 # List of Jarvis projects
 jarvis_projects:
   - name: "Cluster Monitor"
     git_url: "/linux_sql"
-    description: ""
+    description: "This project is used to recording the hardware specifications in real-time and storing data into an RDBMS."
   - name: "Core Java Apps"
     git_url: "/core_java"
     description:
@@ -60,6 +61,9 @@ highlighted_projects:
   - name: "GUI Othello Game"
     git_url: "https://github.com/WuWaA/Othello-Game"
     description: "A GUI Othello Game that can be played as Player vs. Player or Player vs. Machine locally. Using JavaFX as GUI framework. Applied the MVC model with several design patterns. Designed two different machine playing strategies."
+  - name: "Command-Line Chatroom"
+    git_url: "https://github.com/WuWaA/Online-Chatroom-CLI"
+    description: "An Internet-Based Command-Line Chatroom, build by C Language and involving underlying network transmission. The project contains custom socket, server side, and client side."
 
 professional_experience:
   - title: "Web Developer"
@@ -83,8 +87,8 @@ education:
 others:
   - title: "Certificates"
     bullets:
-      - "Enterprise Design Thinking by IBM (2022)"
+      - "Enterprise Design Thinking Certificates by IBM (2022)"
   - title: "Activities"
     bullets:
-      - "Video Editing"
       - "Competitive Algorithm Coding"
+      - "Video Editing"
