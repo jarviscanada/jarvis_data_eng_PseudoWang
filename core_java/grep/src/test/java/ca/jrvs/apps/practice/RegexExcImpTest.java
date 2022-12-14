@@ -1,8 +1,6 @@
-package ca.jrvs.apps.grep;
+package ca.jrvs.apps.practice;
 
-import ca.jrvs.apps.practice.RegexExcImp;
-
-public class RegexExcImpTester {
+public class RegexExcImpTest {
     public static void main(String[] args) {
         RegexExcImp test = new RegexExcImp();
         System.out.println(test.matchJpeg("a.jpg"));
