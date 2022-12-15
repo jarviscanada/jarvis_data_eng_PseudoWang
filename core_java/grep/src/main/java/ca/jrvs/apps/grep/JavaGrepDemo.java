@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is a demo of Java version `grep` command
@@ -29,7 +31,7 @@ public class JavaGrepDemo {
 
         // parameter number validation
         if (args.length != 3)
-            throw new IllegalArgumentException("Illegal number of parameters\nUsage: JavaGrepDemo regex rootPath outFile");
+            throw new IllegalArgumentException("\nIllegal number of parameters.\nUsage: JavaGrepDemo regex rootPath outFile\n");
 
         // use final to disallow modify after assign
         final String regex = args[0];
@@ -38,15 +40,16 @@ public class JavaGrepDemo {
 
         File path = new File(rootPath);
         Scanner scanner = null;
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
+        final Logger logger = LoggerFactory.getLogger(JavaGrepDemo.class);
 
         // root path validation
         if (!path.exists())
-            throw new IOException("Root path does not exist.");
+            throw new IOException("\nRoot path does not exist.\n");
         else if (!path.isDirectory())
-            throw new IOException("Root path is not a directory.");
+            throw new IOException("\nRoot path is not a directory.\n");
 
-        LinkedList<File> files = new LinkedList<File>();
+        LinkedList<File> files = new LinkedList<>();
         getFiles(path, files);
 
         // traversal files
@@ -59,23 +62,26 @@ public class JavaGrepDemo {
                         buffer.append(line + "\n");
                     }
                 } catch (IllegalArgumentException e) {
-                    System.err.println("Please check the regex:\n" + e.getMessage());
+                    logger.error("Please check the regex:\n{}", e.getMessage());
                     System.exit(1);
                 }
             }
+            scanner.close();
         }
 
         String result = buffer.substring(0, buffer.length() - 1);
 
         File file = new File(outFile);
         try {
-            file.createNewFile();
+            boolean status = file.createNewFile();
+            if (!status)
+                throw new IOException("\nCreate output file failed.\n");
             FileWriter stream = new FileWriter(file);
             stream.write(result);
             stream.flush();
             stream.close();
         } catch (IOException e) {
-            System.err.println("Save output failed:\n" + e.getMessage());
+            logger.error("Save output failed:\n{}", e.getMessage());
             System.exit(1);
         }
         System.exit(0);
