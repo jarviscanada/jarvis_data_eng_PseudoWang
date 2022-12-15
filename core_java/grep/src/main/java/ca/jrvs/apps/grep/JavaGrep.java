@@ -19,15 +19,17 @@ public interface JavaGrep {
      * Listing files of rootDir
      * @param rootDir root directory
      * @return list of files
+     * @throws IOException if input is incorrect
      */
-    List<File> listFiles(String rootDir);
+    List<File> listFiles(String rootDir) throws IOException;
 
     /**
      * Listing lines of inputFile
      * @param inputFile input file
      * @return list of lines
+     * @throws IOException if input is incorrect
      */
-    List<String> readLines(File inputFile);
+    List<String> readLines(File inputFile) throws IOException;
 
     /**
      * Check if input line contains regex pattern
