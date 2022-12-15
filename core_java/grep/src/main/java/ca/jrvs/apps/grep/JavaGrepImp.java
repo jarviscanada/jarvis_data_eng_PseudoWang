@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.regex.Pattern;
+
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,7 +52,7 @@ public class JavaGrepImp implements JavaGrep {
         while (!queue.isEmpty()) {
             File current = queue.poll();
             if (current.isDirectory()) {
-                queue.add(current);
+                queue.addAll(Arrays.asList(current.listFiles()));
                 continue;
             }
             files.add(current);
@@ -70,7 +72,7 @@ public class JavaGrepImp implements JavaGrep {
                 return true;
             }
         } catch (IllegalArgumentException e) {
-            logger.error("Please check the regex:\n{}", e.getMessage());
+            logger.error("\nPlease check the regex:\n{}", e.getMessage());
             System.exit(1);
         }
         return false;
@@ -80,16 +82,21 @@ public class JavaGrepImp implements JavaGrep {
     public void writeToFile(List<String> lines) throws IOException {
         File file = new File(getOutFile());
         try {
-            boolean status = file.createNewFile();
-            if (!status)
-                throw new IOException("\nCreate output file failed.\n");
-            FileWriter stream = new FileWriter(file);
-            for (String line : lines)
-                stream.write(line);
-            stream.flush();
-            stream.close();
+            if (file.exists() && !file.delete())
+                throw new IOException("\nFailed to delete existed output file.\n");
+            if (file.createNewFile()) {
+                FileWriter stream = new FileWriter(file);
+                for (int i = 0; i < lines.size(); i++)
+                    if (i != lines.size() - 1)
+                        stream.write(lines.get(i) + "\n");
+                    else
+                        stream.write(lines.get(i));
+
+                stream.flush();
+                stream.close();
+            }
         } catch (IOException e) {
-            logger.error("Save output failed:\n{}", e.getMessage());
+            logger.error("\nSave output failed:\n{}", e.getMessage());
             System.exit(1);
         }
     }
@@ -125,9 +132,13 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     public static void main(String[] args) {
+        // log4j initial
+        BasicConfigurator.configure();
+
         // parameter number validation
         if (args.length != 3)
-            throw new IllegalArgumentException("\nIllegal number of parameters.\nUsage: JavaGrep regex rootPath outFile\n");
+            throw new IllegalArgumentException(
+                    "\nIllegal number of parameters.\nUsage: JavaGrep regex rootPath outFile\n");
 
         JavaGrepImp instance = new JavaGrepImp();
         instance.regex = args[0];
