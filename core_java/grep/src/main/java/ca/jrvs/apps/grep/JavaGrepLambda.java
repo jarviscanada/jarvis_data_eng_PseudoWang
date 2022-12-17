@@ -27,8 +27,9 @@ public interface JavaGrepLambda {
      * Traversal lines of inputFile
      * @param inputFile input file
      * @return stream of lines
+     * @throws IOException
      */
-    Stream<String> readLines(File inputFile);
+    Stream<String> readLines(File inputFile) throws IOException;
 
     /**
      * Check if input line contains regex pattern
@@ -40,8 +41,9 @@ public interface JavaGrepLambda {
     /**
      * Write lines into output file
      * @param lines
+     * @throws IOException
      */
-    void writeToFile(String lines);
+    void writeToFile(Stream<String> lines) throws IOException;
 
     /**
      * Getter for root path

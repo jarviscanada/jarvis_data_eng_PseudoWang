@@ -1,8 +1,12 @@
 package ca.jrvs.apps.grep;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,10 +21,16 @@ public class JavaGrepLambdaImp implements JavaGrepLambda {
 
     @Override
     public void process() throws IOException {
-        streamFiles(getRootPath()).forEach(file -> readLines(file).forEach(line -> {
-            if (containsPattern(line))
-                writeToFile(line);
-        }));
+        Stream<String> lines = streamFiles(getRootPath()).flatMap(file -> {
+            try {
+                return readLines(file);
+            } catch (IOException e) {
+                logger.error("\nRead file content failed:\n{}", e.getMessage());
+                System.exit(1);
+                return null;
+            }
+        });
+        writeToFile(lines.filter(stream -> containsPattern(stream)));
     }
 
     @Override
@@ -37,18 +47,30 @@ public class JavaGrepLambdaImp implements JavaGrepLambda {
     }
 
     @Override
-    public Stream<String> readLines(File inputFile) {
-        return null;
+    public Stream<String> readLines(File inputFile) throws IOException {
+        return Files.lines(inputFile.toPath());
     }
 
     @Override
     public boolean containsPattern(String line) {
-        return false;
+        Pattern pattern = Pattern.compile(getRegex());
+        Matcher matcher = pattern.matcher(line);
+        return matcher.matches();
     }
 
     @Override
-    public void writeToFile(String lines) {
-
+    public void writeToFile(Stream<String> lines) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(getOutFile()));
+        lines.forEach(s -> {
+            try {
+                writer.write(s);
+                writer.newLine();
+            } catch (IOException e) {
+                logger.error("\nSave output failed:\n{}", e.getMessage());
+                System.exit(1);
+            }
+        });
+        writer.close();
     }
 
     @Override
