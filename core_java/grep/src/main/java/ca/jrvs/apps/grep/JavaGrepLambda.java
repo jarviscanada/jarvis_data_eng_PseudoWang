@@ -1,6 +1,7 @@
 package ca.jrvs.apps.grep;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.stream.Stream;
 
 /**
@@ -10,15 +11,17 @@ public interface JavaGrepLambda {
 
     /**
      * Top level search workflow
+     * @throws IOException
      */
-    void process();
+    void process() throws IOException;
 
     /**
      * Traversal files of rootDir
      * @param rootDir root directory
      * @return stream of files
+     * @throws IOException
      */
-    Stream<File> streamFiles(String rootDir);
+    Stream<File> streamFiles(String rootDir) throws IOException;
 
     /**
      * Traversal lines of inputFile
