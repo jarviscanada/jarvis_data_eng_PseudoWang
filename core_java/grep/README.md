@@ -3,7 +3,7 @@
 ## Introduction
 
 A Java app that mimics Linux grep command which allows users to search matching strings from files.
-This project use Java API (mainly `File` and `Stream`) for implementing and `Maven` for packaging. For `Stream` process, `Lambda` has been used in this project. For logging and error outputting, `slf4j` has been used in the project. During `process()`, the idea of functional programming was implied.
+This project use Java API (mainly `File` and `Stream`) for implementing and `Maven` for packaging. For `Stream` process, `Lambda` has been used in this project. For logging and error outputting, `slf4j` has been used in the project. In the function `process()`, the idea of functional programming was implied.
 
 ## Quick Start
 
