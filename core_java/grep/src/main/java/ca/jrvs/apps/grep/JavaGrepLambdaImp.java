@@ -35,7 +35,7 @@ public class JavaGrepLambdaImp implements JavaGrepLambda {
 
     @Override
     public Stream<File> streamFiles(String rootDir) throws IOException {
-        Path path = Path.of(rootDir);
+        Path path = Paths.get(rootDir);
         File file = new File(rootDir);
 
         if (!file.exists())
