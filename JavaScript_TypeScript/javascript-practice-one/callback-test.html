@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<body>
+    <script>
+        function loadScript(src, callback) {
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => callback(null, script);
+            script.onerror = () => callback(new Error(`Script load error for ${src}`));
+
+            document.head.append(script);
+        }
+
+        loadScript('callback-test.js', function (error, script) {
+            if (error) {
+                console.log("error1: " + error);
+                test(2);
+            } else {
+                console.log("success1");
+                test(1);
+            }
+        });
+
+        loadScript('non-exist.js', function (error, script) {
+            if (error) {
+                console.log("error2: " + error);
+            } else {
+                console.log("success2");
+            }
+        });
+
+        test(3);
+    </script>
+
+    <h2>output:</h2>
+    <textarea style="min-width: 500px; min-height: 100px;">
+    Uncaught ReferenceError: test is not defined
+    error2: Error: Script load error for non-exist.js
+    test0
+    success1
+    test1
+    </textarea>
+</body>
+
+</html>
