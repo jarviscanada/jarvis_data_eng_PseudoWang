@@ -76,12 +76,7 @@ Exercise:
 
 */
 
-// export type User = { name: string; age: number; occupation: string };
-export interface User {
-  name: string;
-  age: number;
-  occupation: string;
-}
+export type User = { name: string; age: number; occupation: string };
 
 export const users: User[] = [
   {
