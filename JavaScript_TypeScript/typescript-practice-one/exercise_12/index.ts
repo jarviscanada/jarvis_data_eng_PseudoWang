@@ -47,6 +47,8 @@ Higher difficulty bonus exercise:
 
 */
 
+// declare module
+
 interface User {
     type: 'user';
     name: string;

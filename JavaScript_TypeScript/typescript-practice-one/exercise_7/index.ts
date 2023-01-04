@@ -24,6 +24,8 @@ Exercise:
 
 */
 
+// as (type assertions)
+
 interface User {
   type: 'user';
   name: string;

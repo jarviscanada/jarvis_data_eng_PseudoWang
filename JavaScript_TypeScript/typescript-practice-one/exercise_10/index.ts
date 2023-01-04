@@ -35,6 +35,8 @@ Higher difficulty bonus exercise:
 
 */
 
+// promise
+
 interface User {
   type: "user";
   name: string;

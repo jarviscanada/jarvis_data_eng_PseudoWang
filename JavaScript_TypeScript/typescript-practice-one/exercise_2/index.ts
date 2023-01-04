@@ -18,6 +18,8 @@ Exercise:
 
 */
 
+// union type & type alias
+
 interface User {
     name: string;
     age: number;

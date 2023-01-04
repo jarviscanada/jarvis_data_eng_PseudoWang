@@ -27,6 +27,8 @@ Exercise:
 
 */
 
+// union type & generics
+
 interface User {
   type: "user";
   name: string;

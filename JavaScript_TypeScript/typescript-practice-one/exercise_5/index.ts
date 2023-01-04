@@ -21,6 +21,8 @@ Higher difficulty bonus exercise:
 
 */
 
+// utility types
+
 interface User {
     type: 'user';
     name: string;

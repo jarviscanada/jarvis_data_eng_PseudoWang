@@ -17,6 +17,8 @@ Exercise:
 
 */
 
+// type intersection
+
 interface User {
   type: 'user';
   name: string;

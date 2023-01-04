@@ -27,6 +27,8 @@ Higher difficulty bonus exercise:
 
 */
 
+// function overloading
+
 interface User {
   type: "user";
   name: string;

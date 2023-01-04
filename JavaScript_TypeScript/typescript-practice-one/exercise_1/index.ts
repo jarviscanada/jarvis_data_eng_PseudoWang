@@ -76,7 +76,13 @@ Exercise:
 
 */
 
-export type User = { name: string; age: number; occupation: string };
+// type & interface
+
+export interface User {
+  name: string;
+  age: number;
+  occupation: string;
+}
 
 export const users: User[] = [
   {

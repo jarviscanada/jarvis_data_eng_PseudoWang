@@ -30,6 +30,8 @@ Exercise:
 
 */
 
+// declare & module & export
+
 interface User {
     type: 'user';
     name: string;

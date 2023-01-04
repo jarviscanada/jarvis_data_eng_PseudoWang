@@ -15,6 +15,8 @@ Exercise:
 
 */
 
+// is
+
 interface User {
     type: 'user';
     name: string;
