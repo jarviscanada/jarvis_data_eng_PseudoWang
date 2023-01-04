@@ -30,9 +30,14 @@ function isValid(board: string[][], row: number, col: number, num: string): bool
   for (let i = 0; i < 9; i++) {
     if (board[i][col] !== "." && board[i][col] === num) return false;
     if (board[row][i] !== "." && board[row][i] === num) return false;
+    let subBoxStartRow = 3 * Math.floor(row / 3);
+    let subBoxStartCol = 3 * Math.floor(col / 3);
+    let subBoxCurrentRow = Math.floor(i / 3);
+    let subBoxCurrentCol = i % 3;
+    // check if 3x3 sub-box position is valid
     if (
-      board[3 * Math.floor(row / 3) + Math.floor(i / 3)][3 * Math.floor(col / 3) + (i % 3)] !== "." &&
-      board[3 * Math.floor(row / 3) + Math.floor(i / 3)][3 * Math.floor(col / 3) + (i % 3)] === num
+      board[subBoxStartRow + subBoxCurrentRow][subBoxStartCol + subBoxCurrentCol] !== "." &&
+      board[subBoxStartRow + subBoxCurrentRow][subBoxStartCol + subBoxCurrentCol] === num
     )
       return false;
   }
