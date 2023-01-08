@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderListService } from './trader-list.service';
+import { TraderListComponent } from './trader-list/trader-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    TraderAccountComponent
+    TraderAccountComponent,
+    TraderListComponent
   ],
   imports: [
     BrowserModule,
