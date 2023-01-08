@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
+import { TraderListService } from './trader-list.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { TraderAccountComponent } from './trader-account/trader-account.componen
     BrowserAnimationsModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [TraderListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
