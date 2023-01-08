@@ -6,13 +6,15 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class TraderListService {
+  constructor() {}
+
   traderList: Trader[] = [
     {
       key: '1',
       id: 1,
       firstName: 'Mike',
       lastName: 'Spencer',
-      dob: new Date().toLocaleDateString,
+      dob: new Date().toLocaleDateString(),
       country: 'Canada',
       email: 'mike@email.com',
       amount: 0,
@@ -30,18 +32,28 @@ export class TraderListService {
       actions: `<button (click)="deleteTrader">Delete Trader</button>`,
     },
   ];
-  constructor() {}
+
   getDataSource(): Observable<Trader[]> {
     return of(this.traderList);
   }
+
   getColumns(): string[] {
     return [
       'First Name',
       'Last Name',
       'Email',
-      'DateOfBirth',
+      'Date Of Birth',
       'Country',
       'Actions',
     ];
   }
+
+  mapping: { [key: string]: string } = {
+    'First Name': 'firstName',
+    'Last Name': 'lastName',
+    Email: 'email',
+    'Date Of Birth': 'dob',
+    Country: 'country',
+    Actions: 'actions',
+  };
 }

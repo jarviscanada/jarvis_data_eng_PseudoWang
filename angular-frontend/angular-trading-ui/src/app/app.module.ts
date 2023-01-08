@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderListService } from './trader-list.service';
 import { TraderListComponent } from './trader-list/trader-list.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TraderListComponent } from './trader-list/trader-list.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   providers: [TraderListService],
   bootstrap: [AppComponent]

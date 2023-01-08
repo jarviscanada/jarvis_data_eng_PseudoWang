@@ -1,1 +1,13 @@
-<p>trader-list works!</p>
+<div class="trader-list">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <caption>Trader List</caption>
+        <!-- Loop over the columns array and create a table column for each item -->
+        <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+            <th mat-header-cell *matHeaderCellDef> {{ column }} </th>
+            <td mat-cell *matCellDef="let element"> {{ element[traderListService.mapping[column]] }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

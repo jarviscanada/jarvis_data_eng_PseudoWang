@@ -3,7 +3,7 @@ export interface Trader {
     id: number,
     firstName: string,
     lastName: string,
-    dob: unknown,
+    dob: string,
     country: string,
     email: string,
     amount: number,
