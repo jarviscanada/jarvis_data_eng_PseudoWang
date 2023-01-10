@@ -107,11 +107,11 @@ professional_experience:
   - title: "Web Developer"
     company: "Emerge Labs"
     duration: "2016-2017"
-    description: "Collaborate with designers to analyze client needs and create innovative interactive websites, one of them is: http://gongdaixie.com"
+    description: "As a front-end developer, works closely with designers to understand client requirements and deliver over ten interactive websites utilizing JavaScript and Canvas technologies. Emphasis on innovation and collaboration to create a compelling user experience."
   - title: "Computer Science Lecturer"
     company: "Future Up Inc"
     duration: "2019-2020"
-    description: "Reinforce knowledge of Java data structures taught at York University and help students achieve top 10% in their class."
+    description: "Provides supplementary instruction on Java data structures, with a focus on reinforcing material taught at York University to aid students in achieving top performance in their class, specifically within the top 10%."
 
 education:
   - school_name: "York University"
