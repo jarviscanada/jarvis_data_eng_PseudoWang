@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class TraderListService {
+
   constructor() {}
 
   traderList: Trader[] = [
@@ -46,6 +47,14 @@ export class TraderListService {
       'Country',
       'Actions',
     ];
+  }
+
+  deleteTrader(id: number): boolean {
+    throw new Error('Method not implemented.');
+  }
+
+  addTrader(): boolean {
+    throw new Error('Method not implemented.');
   }
 
   mapping: { [key: string]: string } = {

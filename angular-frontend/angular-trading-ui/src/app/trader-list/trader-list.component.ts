@@ -8,7 +8,17 @@ import { TraderListService } from '../trader-list.service';
   providers: [TraderListService],
 })
 export class TraderListComponent {
-  traderListService: TraderListService = new TraderListService();
-  displayedColumns: string[] = this.traderListService.getColumns();
-  dataSource = this.traderListService.getDataSource();
+  constructor(private _traderList: TraderListService) {}
+
+  //_traderList: TraderListService = new TraderListService();
+  displayedColumns: string[] = this._traderList.getColumns();
+  dataSource = this._traderList.getDataSource();
+
+  deleteTrader(event: Event, id: number): void {
+    try {
+      this._traderList.deleteTrader(id);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
