@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule } from '@angular/material/icon';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderListService } from './trader-list.service';
 import { TraderListComponent } from './trader-list/trader-list.component';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -18,16 +21,19 @@ import { MatTableModule } from '@angular/material/table';
     DashboardComponent,
     NavbarComponent,
     TraderAccountComponent,
-    TraderListComponent
+    TraderListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatGridListModule,
   ],
   providers: [TraderListService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
