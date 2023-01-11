@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderListService } from './trader-list.service';
 import { TraderListComponent } from './trader-list/trader-list.component';
+import { MatCommonModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,6 +28,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCommonModule,
     MatIconModule,
     MatTableModule,
     MatButtonModule,
