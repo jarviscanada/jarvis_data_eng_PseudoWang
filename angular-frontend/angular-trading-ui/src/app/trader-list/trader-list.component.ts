@@ -10,15 +10,11 @@ import { TraderListService } from '../trader-list.service';
 export class TraderListComponent {
   constructor(private _traderList: TraderListService) {}
 
-  //_traderList: TraderListService = new TraderListService();
   displayedColumns: string[] = this._traderList.getColumns();
   dataSource = this._traderList.getDataSource();
 
-  deleteTrader(event: Event, id: number): void {
-    try {
-      this._traderList.deleteTrader(id);
-    } catch (err) {
-      console.log(err);
-    }
+  deleteTrader(id: number): void {
+    if (this._traderList.deleteTrader(id))
+      this.dataSource = this._traderList.getDataSource();
   }
 }

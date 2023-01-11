@@ -7,5 +7,5 @@ export interface Trader {
     country: string,
     email: string,
     amount: number,
-    actions: string,
+    actions: any,
 }

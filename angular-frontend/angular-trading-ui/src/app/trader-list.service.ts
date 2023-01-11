@@ -6,9 +6,6 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class TraderListService {
-
-  constructor() {}
-
   traderList: Trader[] = [
     {
       key: '1',
@@ -19,7 +16,7 @@ export class TraderListService {
       country: 'Canada',
       email: 'mike@email.com',
       amount: 0,
-      actions: `<button (click)="deleteTrader">Delete Trader</button>`,
+      actions: { id: 1 },
     },
     {
       key: '2',
@@ -30,7 +27,7 @@ export class TraderListService {
       country: 'USA',
       email: 'hellen@email.com',
       amount: 0,
-      actions: `<button (click)="deleteTrader">Delete Trader</button>`,
+      actions: { id: 2 },
     },
   ];
 
@@ -50,19 +47,13 @@ export class TraderListService {
   }
 
   deleteTrader(id: number): boolean {
-    throw new Error('Method not implemented.');
+    const index = this.traderList.findIndex((trader) => trader.id === id);
+    if (index === -1) return false;
+    this.traderList.splice(index, 1);
+    return true;
   }
 
   addTrader(): boolean {
     throw new Error('Method not implemented.');
   }
-
-  mapping: { [key: string]: string } = {
-    'First Name': 'firstName',
-    'Last Name': 'lastName',
-    Email: 'email',
-    'Date Of Birth': 'dob',
-    Country: 'country',
-    Actions: 'actions',
-  };
 }
