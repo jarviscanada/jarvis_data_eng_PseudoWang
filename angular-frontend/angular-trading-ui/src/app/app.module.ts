@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderListService } from './trader-list.service';
 import { TraderListComponent } from './trader-list/trader-list.component';
+import { DialogService } from './dialog.service';
 import { MatCommonModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { TraderCreationComponent } from './trader-creation/trader-creation.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     NavbarComponent,
     TraderAccountComponent,
     TraderListComponent,
+    TraderCreationComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatDialogModule,
     MatGridListModule,
   ],
-  providers: [TraderListService],
+  providers: [TraderListService, DialogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
