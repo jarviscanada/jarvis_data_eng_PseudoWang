@@ -16,13 +16,13 @@
     <p>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input type="email" matInput  placeholder="Ex. name@email.com">
+            <input matInput  placeholder="Ex. name@email.com">
         </mat-form-field>
     </p>
     <p>
         <mat-form-field appearance="fill">
             <mat-label>Country</mat-label>
-            <input type="country" matInput placeholder="Ex. Canada">
+            <input matInput placeholder="Ex. Canada">
         </mat-form-field>
     </p>
     <p>
@@ -35,5 +35,5 @@
     </p>
 </form>
 <mat-divider class="creation-footer"></mat-divider>
-<button mat-button color="primary">Submit</button>
-<button mat-button>Cancel</button>
+<button mat-button color="primary" (click)="submit()">Submit</button>
+<button mat-button (click)="cancel()">Cancel</button>

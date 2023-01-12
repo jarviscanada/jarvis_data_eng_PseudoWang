@@ -54,6 +54,7 @@ export class TraderListService {
   }
 
   addTrader(): boolean {
-    throw new Error('Method not implemented.');
+    //TODO!
+    return false;
   }
 }
