@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-trader-creation',
   templateUrl: './trader-creation.component.html',
-  styleUrls: ['./trader-creation.component.sass']
+  styleUrls: ['./trader-creation.component.sass'],
 })
-export class TraderCreationComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class TraderCreationComponent {
 }
