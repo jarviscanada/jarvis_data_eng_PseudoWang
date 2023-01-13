@@ -1,0 +1,130 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Sciences",
+      "department": "Computer Science",
+      "duration": "2018-2022",
+      "school_name": "York University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_PseudoWang",
+  "highlighted_projects": [
+    {
+      "description": "A Full-Stack indexing and searching framework. Sample data in GitHub repository is 10 popular programming language. This framework can be deployed on the cloud server such as AWS and Azure. The back-end server uses Node.js, and the database uses MongoDB. The front-end uses Express.js Framework with Webpack, applied Google Material Design. This framework also contains User Verification System, Injection Protection, etc.",
+      "git_url": "https://github.com/WuWaA/Combined-Website-Framework",
+      "name": "Combined Website Framework"
+    },
+    {
+      "description": "A GUI Othello Game that can be played as Player vs. Player or Player vs. Machine locally. Using JavaFX as GUI framework. Applied the MVC model with several design patterns. Designed greedy algorithm and random algorithm for machine playing strategies.",
+      "git_url": "https://github.com/WuWaA/Othello-Game",
+      "name": "GUI Othello Game"
+    },
+    {
+      "description": "An Internet-Based Command-Line Chatroom, build by C Language and involving underlying network transmission. The project contains custom socket, server side, and client side.",
+      "git_url": "https://github.com/WuWaA/Online-Chatroom-CLI",
+      "name": "Command-Line Chatroom"
+    },
+    {
+      "description": "A Java and JavaFX implemented GUI program can be run on Windows 10. Use Java API to call the system command `wmic service` to get Windows Service information. Provide the absolute path of services that both Windows Task Manager and Windows Service Manager do not contain.",
+      "git_url": "https://github.com/WuWaA/Windows-Service-Path-Viewer",
+      "name": "Windows Service Path Viewer"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "This project is used to recording the hardware specifications in real-time and storing data into an RDBMS. In this project, a MVP is implemented for the Jarvis Linux Cluster Administration, which contains single host scripts. The project contains scripts to record server hardware information, record server usage information, and start PostgreSQL service including docker container.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    }
+  ],
+  "name": "Pseudo Wang",
+  "others": [
+    {
+      "bullets": [
+        "Competitive Algorithm Coding",
+        "Video Editing"
+      ],
+      "title": "Activities"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Emerge Labs",
+      "description": "Collaborate with designers to analyze client needs and create innovative interactive websites, one of them is: http://gongdaixie.com",
+      "duration": "2016-2017",
+      "title": "Web Developer"
+    },
+    {
+      "company": "Future Up Inc",
+      "description": "Reinforce knowledge of Java data structures taught at York University and help students achieve top 10% in their class.",
+      "duration": "2019-2020",
+      "title": "Computer Science Lecturer"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "React",
+      "React Native",
+      "Angular",
+      "Vue",
+      "Vite",
+      "ExpressJS",
+      "Webpack",
+      "Canvas",
+      "C Language",
+      "Oracle Cloud",
+      "Microsoft Azure",
+      "Amazon Web Service",
+      "Google Material Design",
+      "Visual Studio",
+      "Android Studio",
+      "Adobe Premiere Pro",
+      "Adobe After Effect"
+    ],
+    "familiar": [
+      "C#",
+      "PHP",
+      "Python",
+      "Flask",
+      "Django",
+      "Kotlin",
+      "Unity",
+      "C4D",
+      "ArcGIS"
+    ],
+    "proficient": [
+      "Git",
+      "GitHub",
+      "Java",
+      "JavaFX",
+      "Maven",
+      "Docker",
+      "Npm",
+      "Nginx",
+      "NodeJS",
+      "HTML",
+      "JavaScript",
+      "JQuery",
+      "CSS",
+      "Bootstrap",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "CentOS",
+      "Ubuntu",
+      "Debian",
+      "Bash Script",
+      "Arduino",
+      "Processing",
+      "Agile Development",
+      "Scrum Progress",
+      "Visual Studio Code",
+      "Adobe Photoshop",
+      "Vegas Pro",
+      "CapCut",
+      "Microsoft Office"
+    ]
+  },
+  "summary": "My name is Pseudo Wang. I graduated from York University in October 2022 with a degree in Computer Science. Before entering the university, I worked in a startup company called Emerge Labs doing front-end related projects for different customers. In this company, I learned to communicate commercially with customers and colleagues and to cooperate with other technicians. After getting into university, I worked as a contracted data structure lecturer at an off-campus tutoring institution called Future Up. In this process, I significantly improved my explanatory skills to better help my students understand the content. I am a self-starter and motivated team player with the ability to accomplish tasks independently. Also, with reliable communication ability and strong coding skills, I'm always the team leader in various projects. Now I'm working with Jarvis and continue learning modern advanced technologies."
+}
