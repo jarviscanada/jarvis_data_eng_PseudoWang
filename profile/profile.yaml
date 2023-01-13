@@ -2,7 +2,7 @@ name: "Pseudo Wang"
 github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_PseudoWang
 
 # education experience, working experience, tech skill, soft skill
-summary: "My name is Pseudo Wang. I graduated from York University in October 2022 with a degree in Computer Science. Before entering the university, I worked in a startup company called Emerge Labs doing front-end related projects for different customers. In this company, I learned to communicate commercially with customers and colleagues and to cooperate with other technicians. After getting into university, I worked as a contracted data structure lecturer at an off-campus tutoring institution called Future Up. In this process, I significantly improved my explanatory skills to better help my students understand the content. I am a self-starter and motivated team player with the ability to accomplish tasks independently. Also, with reliable communication ability and strong coding skills, I'm always the team leader in various projects. Now I'm working with Jarvis and continue learning modern advanced technologies."
+summary: "I graduated from York University in October 2022 with a degree in Computer Science. Prior to university, I worked in a startup company called Emerge Labs building the front-end of projects for different customers. In this company, I learned to communicate commercially with customers and colleagues and to cooperate with other developers. During my university education, I worked as a contracted data structures lecturer at an off-campus tutoring institution called Future Up. By engaging in this process, I significantly enhanced my explanatory abilities, enabling me to more effectively facilitate my students' understanding of the material. I am a self-starter and motivated team player with the ability to accomplish tasks independently. Also, with reliable communication ability and strong coding skills, I'm always the team leader in various projects. Now I'm working with Jarvis and continue learning modern advanced technologies. As a software engineering developer, my long-term career goal is to attain a leadership position as a lead software engineer at a prestigious technology firm. To achieve this objective, I am actively working to augment my skills through hands-on experience and seeking out opportunities within my current company to gain valuable management experience through leadership roles."
 
 skills:
   proficient:
@@ -27,8 +27,6 @@ skills:
     - Ubuntu
     - Debian
     - Bash Script
-    - Arduino
-    - Processing
     - Agile Development
     - Scrum Progress
     - Visual Studio Code
@@ -37,15 +35,13 @@ skills:
     - CapCut
     - Microsoft Office
   competent:
-    - React
-    - React Native
     - Angular
-    - Vue
-    - Vite
     - ExpressJS
     - Webpack
     - Canvas
     - C Language
+    - Arduino
+    - Processing
     - Oracle Cloud
     - Microsoft Azure
     - Amazon Web Service
@@ -55,6 +51,10 @@ skills:
     - Adobe Premiere Pro
     - Adobe After Effect
   familiar:
+    - React
+    - React Native
+    - Vue
+    - Vite
     - C#
     - PHP
     - Python
@@ -62,13 +62,14 @@ skills:
     - Django
     - Kotlin
     - Unity
+    - Blender
     - C4D
     - ArcGIS
 
 jarvis_projects:
   - name: "Cluster Monitor"
     git_url: "/linux_sql"
-    description: "This project is used to recording the hardware specifications in real-time and storing data into an RDBMS. In this project, a MVP is implemented for the Jarvis Linux Cluster Administration, which contains single host scripts. The project contains scripts to record server hardware information, record server usage information, and start PostgreSQL service including docker container."
+    description: "This project is used to record and persist the hardware specifications and resource usage of a Linux cluster in PostgreSQL. I implemented a MVP for the Jarvis Linux Cluster Administration in this project, which included single host scripts that were used to record and persist hardware specifications and resource usage of a Linux cluster into PostgreSQL. This involved writing scripts to collect server hardware information, track server usage data, and launch the PostgreSQL service and its accompanying docker container. Through my efforts, I was able to successfully deliver a functional MVP for the Jarvis Linux Cluster Administration."
   # - name: "Core Java Apps"
   #   git_url: "/core_java"
   #   description:
@@ -91,26 +92,26 @@ jarvis_projects:
 highlighted_projects:
   - name: "Combined Website Framework"
     git_url: "https://github.com/WuWaA/Combined-Website-Framework"
-    description: "A Full-Stack indexing and searching framework. Sample data in GitHub repository is 10 popular programming language. This framework can be deployed on the cloud server such as AWS and Azure. The back-end server uses Node.js, and the database uses MongoDB. The front-end uses Express.js Framework with Webpack, applied Google Material Design. This framework also contains User Verification System, Injection Protection, etc."
+    description: "In this project, I developed a full-stack indexing and searching framework. Initially, this project was created for a specific business purpose, but I subsequently rewrote it to make it a more versatile and general purpose framework. The framework allows users to search for popular programming languages by name or key features, and displays descriptions of the languages as search results. The sample data included in the GitHub repository consists of the top ten popular programming languages, but the framework can also be used with custom data. In addition to its indexing and searching capabilities, the framework features a back-end server built with Node.js and a MongoDB database, as well as a front-end utilizing the Express.js framework with Webpack and Google Material Design. To ensure the security and reliability of the framework, I also implemented a user verification system and injection protection measures. This framework can be deployed on cloud servers such as AWS and Azure."
   - name: "GUI Othello Game"
     git_url: "https://github.com/WuWaA/Othello-Game"
-    description: "A GUI Othello Game that can be played as Player vs. Player or Player vs. Machine locally. Using JavaFX as GUI framework. Applied the MVC model with several design patterns. Designed greedy algorithm and random algorithm for machine playing strategies."
+    description: "In this project, I created a graphical user interface (GUI) version of the popular board game Othello. The game can be played locally in both player vs. player and player vs. machine modes, with the use of JavaFX as the GUI framework. To ensure a clear separation of concerns and ease of maintenance, I employed the Model-View-Controller (MVC) design pattern in the development of this project. Additionally, I utilized several other design patterns to structure the codebase in a more efficient and maintainable way. For the machine playing mode, I developed two separate AI strategies: a greedy algorithm and a random algorithm. The game can be played with human-like intelligence with the former, or with more random and unpredictable playing style with the latter. The game was implemented with object-oriented principles, which leads to a robust and reusable design, making it easy to extend or adjust the game logic."
   - name: "Command-Line Chatroom"
     git_url: "https://github.com/WuWaA/Online-Chatroom-CLI"
-    description: "An Internet-Based Command-Line Chatroom, build by C Language and involving underlying network transmission. The project contains custom socket, server side, and client side."
+    description: "In this project, I created an internet-based command-line chatroom using the C programming language. The primary focus of the project was on underlying network transmission and the implementation of custom sockets for server and client communication. I built the server-side and client-side separately, allowing for a clear separation of concerns and ease of maintenance. The chatroom can handle multiple clients, by having its own thread for each client, which improves its scalability. Additionally, the chatroom also includes features such as handling different user statuses, such as joining and leaving a room."
   - name: "Windows Service Path Viewer"
     git_url: "https://github.com/WuWaA/Windows-Service-Path-Viewer"
-    description: "A Java and JavaFX implemented GUI program can be run on Windows 10. Use Java API to call the system command `wmic service` to get Windows Service information. Provide the absolute path of services that both Windows Task Manager and Windows Service Manager do not contain."
+    description: "In this project, I developed a graphical user interface (GUI) program using Java and JavaFX that can be executed on Windows 10. The program utilizes the Java API to invoke the system command `wmic service` to retrieve information about Windows Services. The program provides an easy-to-use interface that allows the user to view a list of all the services running on the system, including those that are not visible in the default Windows Task Manager or Services Manager. Additionally, the program also provides the absolute path of the services to the user, which can be useful for troubleshooting and managing services. By using JavaFX as the GUI framework, this program has an elegant and modern look and feel, which provides a better user experience. The program was built with Object-Oriented design principles which lead to a clean, easy-to-maintain and extendable codebase."
 
 professional_experience:
   - title: "Web Developer"
     company: "Emerge Labs"
     duration: "2016-2017"
-    description: "Collaborate with designers to analyze client needs and create innovative interactive websites, one of them is: http://gongdaixie.com"
+    description: "As a front-end developer, works closely with designers to understand client requirements and deliver over ten interactive websites utilizing JavaScript and Canvas technologies. Emphasis on innovation and collaboration to create a compelling user experience."
   - title: "Computer Science Lecturer"
     company: "Future Up Inc"
     duration: "2019-2020"
-    description: "Reinforce knowledge of Java data structures taught at York University and help students achieve top 10% in their class."
+    description: "Provides supplementary instruction on Java data structures, with a focus on reinforcing material taught at York University to aid students in achieving top performance in their class, specifically within the top 10%."
 
 education:
   - school_name: "York University"
