@@ -1,23 +1,34 @@
 import { Component } from '@angular/core';
 import { DialogService } from '../dialog.service';
-import { TraderListService } from '../trader-list.service';
+import { FormBuilder } from '@angular/forms';
+import { TraderListComponent } from '../trader-list/trader-list.component';
 
 @Component({
   selector: 'app-trader-creation',
   templateUrl: './trader-creation.component.html',
   styleUrls: ['./trader-creation.component.sass'],
+  providers: [TraderListComponent],
 })
 export class TraderCreationComponent {
-  constructor(private _traderList: TraderListService, private _dialog: DialogService) {}
+  // @ViewChild(MatTable, { static: true }) traderTable!: MatTable<any>;
 
-  submit(): boolean {
-    if (this._traderList.addTrader()) {
-      DialogService.inform("Success!");
-      this._dialog.closeDialog();
-      return true;
-    }
-    DialogService.inform("Failed!");
-    return false;
+  traderForm = this.formBuilder.group({
+    firstName: '',
+    lastName: '',
+    email: '',
+    country: '',
+    dob: '',
+  });
+
+  constructor(
+    private _dialog: DialogService,
+    private formBuilder: FormBuilder,
+    private traderList: TraderListComponent
+  ) {}
+
+  submit(): void {
+    this.traderList.addTrader(this.traderForm.value);
+    this._dialog.closeDialog();
   }
 
   cancel(): void {

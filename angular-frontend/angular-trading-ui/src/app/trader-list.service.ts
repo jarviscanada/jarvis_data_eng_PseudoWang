@@ -53,8 +53,20 @@ export class TraderListService {
     return true;
   }
 
-  addTrader(): boolean {
-    //TODO!
-    return false;
+  addTrader(value: any): void {
+    // ID will be non-unique, but SQL will solve this problem
+    const newID = this.traderList.length + 1;
+    const newTrader: Trader = {
+      key: newID.toString(),
+      id: newID,
+      firstName: value.firstName,
+      lastName: value.lastName,
+      dob: value.dob.toLocaleDateString(),
+      country: value.country,
+      email: value.email,
+      amount: 0,
+      actions: { id: newID },
+    };
+    this.traderList.push(newTrader);
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { TraderCreationComponent } from './trader-creation/trader-creation.component';
 
 @Injectable({
@@ -23,18 +23,10 @@ export class DialogService {
   openDialog() {
     const dialogRef = this.dialog.open(TraderCreationComponent);
     this.dialogID = dialogRef.id;
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`openDialog: ${result}`);
-    });
   }
 
   closeDialog() {
     const dialogRef = this.dialog.getDialogById(this.dialogID);
-    if (dialogRef) {
-      dialogRef.close();
-      dialogRef.afterClosed().subscribe((result) => {
-        console.log(`closeDialog: ${result}`);
-      });
-    }
+    if (dialogRef) dialogRef.close();
   }
 }
