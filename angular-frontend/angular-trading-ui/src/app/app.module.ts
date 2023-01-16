@@ -23,8 +23,6 @@ import { QuotesListComponent } from './quotes-list/quotes-list.component';
 import { TraderListComponent } from './trader-list/trader-list.component';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderCreationComponent } from './trader-creation/trader-creation.component';
-import { TraderListService } from './trader-list.service';
-import { DialogService } from './dialog.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +54,6 @@ import { DialogService } from './dialog.service';
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [TraderListService, DialogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

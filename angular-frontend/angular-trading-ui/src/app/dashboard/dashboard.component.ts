@@ -12,4 +12,8 @@ export class DashboardComponent {
   openDialog(): void {
     this._dialog.openDialog();
   }
+
+  closeDialog(): void {
+    this._dialog.closeDialog();
+  }
 }
