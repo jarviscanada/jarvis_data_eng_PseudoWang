@@ -1,6 +1,6 @@
 import { Trader } from './trader';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -30,9 +30,10 @@ export class TraderListService {
       actions: { id: 2 },
     },
   ];
+  private traderListSubject = new BehaviorSubject<Trader[]>(this.traderList);
 
   getDataSource(): Observable<Trader[]> {
-    return of(this.traderList);
+    return this.traderListSubject.asObservable();
   }
 
   getColumns(): string[] {
@@ -50,6 +51,7 @@ export class TraderListService {
     const index = this.traderList.findIndex((trader) => trader.id === id);
     if (index === -1) return false;
     this.traderList.splice(index, 1);
+    this.traderListSubject.next(this.traderList);
     return true;
   }
 
@@ -68,5 +70,6 @@ export class TraderListService {
       actions: { id: newID },
     };
     this.traderList.push(newTrader);
+    this.traderListSubject.next(this.traderList);
   }
 }
