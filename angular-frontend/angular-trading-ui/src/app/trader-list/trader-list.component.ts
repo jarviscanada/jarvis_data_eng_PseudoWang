@@ -4,6 +4,7 @@ import { DialogService } from '../dialog.service';
 import { Trader } from '../trader';
 import { MatTable } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trader-list',
@@ -15,7 +16,7 @@ export class TraderListComponent {
   dataSource = new MatTableDataSource<Trader>();
   displayedColumns: string[] = this._traderList.getColumns();
 
-  constructor(private _traderList: TraderListService) {}
+  constructor(private _traderList: TraderListService, private router: Router) {}
 
   ngOnInit() {
     this._traderList
@@ -31,5 +32,9 @@ export class TraderListComponent {
       } else {
         DialogService.inform('Trader Not Found!');
       }
+  }
+
+  infoTrader(id: number): void {
+    this.router.navigate(['/trader-account', id]);
   }
 }

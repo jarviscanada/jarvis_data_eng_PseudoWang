@@ -15,7 +15,7 @@ export class TraderListService {
       dob: new Date().toLocaleDateString(),
       country: 'Canada',
       email: 'mike@email.com',
-      amount: 0,
+      amount: 100,
       actions: { id: 1 },
     },
     {
@@ -26,7 +26,7 @@ export class TraderListService {
       dob: new Date().toLocaleDateString(),
       country: 'USA',
       email: 'hellen@email.com',
-      amount: 0,
+      amount: 50,
       actions: { id: 2 },
     },
   ];
@@ -71,5 +71,11 @@ export class TraderListService {
     };
     this.traderList.push(newTrader);
     this.traderListSubject.next(this.traderList);
+  }
+
+  getTrader(id: number): Trader | null {
+    const index = this.traderList.findIndex((trader) => trader.id === id);
+    if (index === -1) return null;
+    return this.traderList[index];
   }
 }
