@@ -78,4 +78,12 @@ export class TraderListService {
     if (index === -1) return null;
     return this.traderList[index];
   }
+
+  updateAmount(id: number, newAmount: number): boolean {
+    const index = this.traderList.findIndex((trader) => trader.id === id);
+    if (index === -1) return false;
+    this.traderList[index].amount = newAmount;
+    this.traderListSubject.next(this.traderList);
+    return true;
+  }
 }

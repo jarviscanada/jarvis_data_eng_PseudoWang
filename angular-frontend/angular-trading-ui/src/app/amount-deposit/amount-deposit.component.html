@@ -1,0 +1,8 @@
+<form>
+    <mat-form-field>
+        <mat-label>Amount To Deposit</mat-label>
+        <input matInput [(ngModel)]="amount" type="number">
+    </mat-form-field>
+
+    <button mat-button class="button" type="submit" color="primary" (click)="deposit()">Deposit</button>
+</form>

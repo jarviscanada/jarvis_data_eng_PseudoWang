@@ -25,6 +25,8 @@ import { QuotesListComponent } from './quotes-list/quotes-list.component';
 import { TraderListComponent } from './trader-list/trader-list.component';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderCreationComponent } from './trader-creation/trader-creation.component';
+import { AmountDepositComponent } from './amount-deposit/amount-deposit.component';
+import { AmountWithdrawComponent } from './amount-withdraw/amount-withdraw.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { TraderCreationComponent } from './trader-creation/trader-creation.compo
     TraderListComponent,
     TraderAccountComponent,
     TraderCreationComponent,
+    AmountDepositComponent,
+    AmountWithdrawComponent,
   ],
   imports: [
     CommonModule,

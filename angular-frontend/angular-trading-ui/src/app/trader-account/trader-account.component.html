@@ -3,8 +3,8 @@
         <h1>Trader Account</h1>
     </mat-grid-tile>
     <mat-grid-tile class="operations" rowspan="2" colspan="1">
-        <button mat-raised-button>Deposit Funds</button>
-        <button mat-raised-button>Withdraw Funds</button>
+        <button mat-raised-button (click)="deposit()">Deposit Funds</button>
+        <button mat-raised-button (click)="withdraw()">Withdraw Funds</button>
     </mat-grid-tile>
     <mat-grid-tile class="amount" rowspan="2" colspan="1">
         <mat-card class="amount-card">
