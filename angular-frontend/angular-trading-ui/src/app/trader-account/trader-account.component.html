@@ -3,8 +3,8 @@
         <h1>Trader Account</h1>
     </mat-grid-tile>
     <mat-grid-tile class="operations" rowspan="2" colspan="1">
-        <button mat-raised-button (click)="deposit()">Deposit Funds</button>
-        <button mat-raised-button (click)="withdraw()">Withdraw Funds</button>
+        <button mat-raised-button color="primary" class="amount-button" (click)="deposit()">Deposit Funds</button>
+        <button mat-raised-button color="primary" class="amount-button" (click)="withdraw()">Withdraw Funds</button>
     </mat-grid-tile>
     <mat-grid-tile class="amount" rowspan="2" colspan="1">
         <mat-card class="amount-card">
@@ -16,28 +16,31 @@
     <mat-grid-tile class="information" rowspan="4" colspan="4">
         <mat-card class="information-card">
             <mat-card-content>
-                <table>
+                <table #newInfoTable>
                     <tr>
                         <td>First Name:</td>
-                        <td>{{trader.firstName}}</td>
+                        <td><input value="{{trader.firstName}}" [disabled]="isDisabled"></td>
                     </tr>
                     <tr>
                         <td>Last Name:</td>
-                        <td>{{trader.lastName}}</td>
+                        <td><input value="{{trader.lastName}}" [disabled]="isDisabled"></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td>{{trader.email}}</td>
+                        <td><input value="{{trader.email}}" [disabled]="isDisabled"></td>
                     </tr>
                     <tr>
                         <td>Date Of Birth:</td>
-                        <td>{{trader.dob}}</td>
+                        <td><input value="{{trader.dob}}" [disabled]="isDisabled"></td>
                     </tr>
                     <tr>
                         <td>Country:</td>
-                        <td>{{trader.country}}</td>
+                        <td><input value="{{trader.country}}" [disabled]="isDisabled"></td>
                     </tr>
                 </table>
+                <button mat-raised-button color="primary" *ngIf="isDisabled" (click)="update()">{{buttonText}}</button>
+                <button mat-raised-button color="primary" *ngIf="!isDisabled" (click)="submit()">{{buttonText}}</button>
+                <button mat-raised-button *ngIf="!isDisabled" (click)="cancel()">Cancel</button>
             </mat-card-content>
         </mat-card>
     </mat-grid-tile>

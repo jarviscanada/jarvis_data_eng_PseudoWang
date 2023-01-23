@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Trader } from './trader';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -6,6 +7,8 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class TraderListService {
+  constructor(private http: HttpClient) {}
+
   traderList: Trader[] = [
     {
       key: '1',
@@ -30,7 +33,53 @@ export class TraderListService {
       actions: { id: 2 },
     },
   ];
+
   private traderListSubject = new BehaviorSubject<Trader[]>(this.traderList);
+
+  private url = 'https://jarvis-express-trading-app.herokuapp.com/api/';
+
+  getTradersAPI(): Trader[] {
+    let traders = this.traderList;
+    this.http.get<Trader[]>(this.url + 'traders').subscribe(
+      (data) => {
+        console.log(data);
+        traders = data;
+        return traders;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+    return traders;
+  }
+
+  createTraderAPI(trader: Trader): boolean {
+    this.http.post<Trader[]>(this.url + 'traders', trader).subscribe(
+      (data) => {
+        console.log(data);
+        return true;
+      },
+      (error) => {
+        console.error(error);
+        return false;
+      }
+    );
+    return true;
+  }
+
+  deleteTraderAPI(id: number): boolean {
+    this.http.delete<Trader[]>(this.url + 'traders/' + id).subscribe(
+      (data) => {
+        console.log(data);
+        return true;
+      },
+      (error) => {
+        console.error(error);
+        return false;
+      }
+    );
+    return true;
+  }
 
   getDataSource(): Observable<Trader[]> {
     return this.traderListSubject.asObservable();
@@ -77,6 +126,17 @@ export class TraderListService {
     const index = this.traderList.findIndex((trader) => trader.id === id);
     if (index === -1) return null;
     return this.traderList[index];
+  }
+
+  updateTrader(id: number, newInfo: any): void {
+    // I'll temporarily ignore data verification for this sample project
+    const index = this.traderList.findIndex((trader) => trader.id === id);
+    this.traderList[index].firstName = newInfo.firstName;
+    this.traderList[index].lastName = newInfo.lastName;
+    this.traderList[index].email = newInfo.email;
+    this.traderList[index].dob = newInfo.dob;
+    this.traderList[index].country = newInfo.country;
+    this.traderListSubject.next(this.traderList);
   }
 
   updateAmount(id: number, newAmount: number): boolean {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Trader } from '../trader';
 import { TraderListService } from '../trader-list.service';
@@ -10,7 +10,13 @@ import { DialogService } from '../dialog.service';
   styleUrls: ['./trader-account.component.sass'],
 })
 export class TraderAccountComponent {
+  @ViewChild('newInfoTable') table!: ElementRef;
+
   ID: number = 0;
+
+  isDisabled = true;
+
+  buttonText = 'Update User Info';
 
   trader: Trader = {
     key: 'Default',
@@ -46,5 +52,32 @@ export class TraderAccountComponent {
 
   withdraw(): void {
     this._dialog.openWithdrawDialog(this.ID);
+  }
+
+  update() {
+    this.isDisabled = !this.isDisabled;
+    this.buttonText = 'Submit';
+  }
+
+  submit() {
+    let inputElements =
+      this.table.nativeElement.querySelectorAll('input');
+    let newInfo = {
+      firstName: inputElements[0].value,
+      lastName: inputElements[1].value,
+      email: inputElements[2].value,
+      dob: inputElements[3].value,
+      country: inputElements[4].value,
+    };
+
+    this._traderList.updateTrader(this.ID, newInfo);
+    DialogService.inform("Success!")
+    this.isDisabled = !this.isDisabled;
+    this.buttonText = 'Update User Info';
+  }
+
+  cancel() {
+    this.buttonText = 'Update User Info';
+    this.isDisabled = !this.isDisabled;
   }
 }

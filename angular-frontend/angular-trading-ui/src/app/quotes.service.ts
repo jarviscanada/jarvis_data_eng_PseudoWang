@@ -26,7 +26,23 @@ export class QuotesService {
     },
   ];
 
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
+
+  private url = 'https://jarvis-express-trading-app.herokuapp.com/api/';
+
+  getQuotesAPI(): Quote[] {
+    let quotes = this.quotesList;
+    this.http.get<Quote[]>(this.url + 'quote/dailyList').subscribe(
+      (data) => {
+        console.log(data);
+        return true;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+    return quotes;
+  }
 
   getColumns(): string[] {
     return [
