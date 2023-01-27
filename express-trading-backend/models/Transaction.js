@@ -6,7 +6,11 @@ class Transaction extends Model {
 
 Transaction.init(
     {
-        //TODO
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true
+        }
     },
     {
         sequelize,

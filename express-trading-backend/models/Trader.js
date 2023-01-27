@@ -9,13 +9,13 @@ Trader.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: true,
+            primaryKey: true
         },
-        firstName: {
+        first_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        lastName: {
+        last_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -34,7 +34,7 @@ Trader.init(
         amount: {
             type: DataTypes.INTEGER,
             allowNull: false
-        },
+        }
     },
     {
         sequelize,

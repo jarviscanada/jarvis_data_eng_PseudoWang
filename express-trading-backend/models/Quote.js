@@ -9,7 +9,7 @@ Quote.init(
         ticker: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
+            primaryKey: true
         },
         last_price: {
             type: DataTypes.DOUBLE,
@@ -30,7 +30,7 @@ Quote.init(
         ask_price: {
             type: DataTypes.DOUBLE,
             allowNull: false
-        },
+        }
     },
     {
         sequelize,

@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const { Trader } = require('../../models');
 
 router.get('/', (req, res) => {
     Trader.findAll({
-        order: [['created_at', 'DESC']],
+        order: [['id', 'DESC']],
     })
         .then(dbTraderData => res.json(dbTraderData))
         .catch(err => {
@@ -18,6 +19,5 @@ router.post('/', (req, res) => {
 router.delete('/:traderId', (req, res) => {
     res.status(500).json({ message: "not implemented" })
 });
-
 
 module.exports = router;
