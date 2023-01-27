@@ -55,7 +55,7 @@ export class TraderListService {
       );
   }
 
-  async createTraderAPI(trader: any): Promise<void> {
+  createTraderAPI(trader: any): void {
     const newTrader = {
       firstName: trader.firstName,
       lastName: trader.lastName,
@@ -64,14 +64,10 @@ export class TraderListService {
       email: trader.email,
       amount: 0,
     };
-    try {
-      await this.http
-        .post<Trader[]>(this.url + 'trader', newTrader)
-        .toPromise();
-      this.getTradersAPI();
-    } catch (error) {
-      console.error(error);
-    }
+    this.http
+      .post<Trader[]>(this.url + 'trader', newTrader)
+      .toPromise()
+      .then(() => this.getTradersAPI());
   }
 
   deleteTraderAPI(id: number): boolean {
