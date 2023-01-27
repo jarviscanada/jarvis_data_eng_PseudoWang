@@ -1,6 +1,17 @@
 const { Transaction } = require('../models');
 
-const transactionData = [];
+const transactionData = [
+    {
+        id: 1,
+        amount: 300,
+        trader_id: 1
+    },
+    {
+        id: 2,
+        amount: -300,
+        trader_id: 1
+    }
+];
 
 const seedTransactions = () => Transaction.bulkCreate(transactionData);
 

@@ -7,13 +7,15 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class TraderListService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.getTradersAPI();
+  }
 
   traderList: Trader[] = [
     {
       key: '1',
       id: 1,
-      firstName: 'Mike',
+      firstName: 'NonAPI',
       lastName: 'Spencer',
       dob: new Date().toLocaleDateString(),
       country: 'Canada',
@@ -36,39 +38,44 @@ export class TraderListService {
 
   private traderListSubject = new BehaviorSubject<Trader[]>(this.traderList);
 
-  private url = 'https://jarvis-express-trading-app.herokuapp.com/api/';
+  private url = 'http://localhost:3001/api/';
 
-  getTradersAPI(): Trader[] {
-    let traders = this.traderList;
-    this.http.get<Trader[]>(this.url + 'traders').subscribe(
-      (data) => {
-        console.log(data);
-        traders = data;
-        return traders;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-    return traders;
+  getTradersAPI(): void {
+    this.http
+      .get<Trader[]>('http://localhost:3001/api/trader')
+      .toPromise()
+      .then(
+        (data) => {
+          this.traderList = data;
+          this.traderListSubject.next(this.traderList);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
   }
 
-  createTraderAPI(trader: Trader): boolean {
-    this.http.post<Trader[]>(this.url + 'traders', trader).subscribe(
-      (data) => {
-        console.log(data);
-        return true;
-      },
-      (error) => {
-        console.error(error);
-        return false;
-      }
-    );
-    return true;
+  async createTraderAPI(trader: any): Promise<void> {
+    const newTrader = {
+      firstName: trader.firstName,
+      lastName: trader.lastName,
+      dob: trader.dob.toLocaleDateString(),
+      country: trader.country,
+      email: trader.email,
+      amount: 0,
+    };
+    try {
+      await this.http
+        .post<Trader[]>(this.url + 'trader', newTrader)
+        .toPromise();
+      this.getTradersAPI();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   deleteTraderAPI(id: number): boolean {
-    this.http.delete<Trader[]>(this.url + 'traders/' + id).subscribe(
+    this.http.delete<Trader[]>(this.url + 'trader/' + id).subscribe(
       (data) => {
         console.log(data);
         return true;

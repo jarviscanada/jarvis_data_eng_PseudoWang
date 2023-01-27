@@ -10,6 +10,14 @@ Transaction.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true
+        },
+        amount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        trader_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     },
     {
