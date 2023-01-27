@@ -1,7 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 class Quote extends Model {
 }
+
 Quote.init(
     {
         ticker: {

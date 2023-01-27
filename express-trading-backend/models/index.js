@@ -1,3 +1,3 @@
 const Quote = require('./Quote');
 
-module.exports = { Trader };
+module.exports = { Quote };

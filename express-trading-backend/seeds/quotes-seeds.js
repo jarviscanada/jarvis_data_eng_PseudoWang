@@ -17,7 +17,6 @@ const quoteData = [
         ask_price: 12,
         ask_size: 6
     },
-
 ];
 
 const seedQuotes = () => Quote.bulkCreate(quoteData);
