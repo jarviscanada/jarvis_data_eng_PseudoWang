@@ -42,7 +42,7 @@ export class TraderListService {
 
   getTradersAPI(): void {
     this.http
-      .get<Trader[]>('http://localhost:3001/api/trader')
+      .get<Trader[]>(this.url + 'trader')
       .toPromise()
       .then(
         (data) => {
@@ -70,18 +70,11 @@ export class TraderListService {
       .then(() => this.getTradersAPI());
   }
 
-  deleteTraderAPI(id: number): boolean {
-    this.http.delete<Trader[]>(this.url + 'trader/' + id).subscribe(
-      (data) => {
-        console.log(data);
-        return true;
-      },
-      (error) => {
-        console.error(error);
-        return false;
-      }
-    );
-    return true;
+  deleteTraderAPI(id: number): void {
+    this.http
+      .delete<Trader[]>(this.url + 'trader/' + id)
+      .toPromise()
+      .then(() => this.getTradersAPI());
   }
 
   getDataSource(): Observable<Trader[]> {

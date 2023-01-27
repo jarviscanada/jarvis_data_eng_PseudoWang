@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
     Trader.findAll({
         order: [['id', 'ASC']],
     })
-        .then(dbTraderData => res.json(dbTraderData))
+        .then(data => res.status(200).json(data))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -21,9 +21,7 @@ router.post('/', (req, res) => {
         email: req.body['email'],
         amount: req.body['amount'],
     })
-        .then(trader => {
-            res.status(200).json({ trader });
-        })
+        .then(data => res.status(200).json(data))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -32,10 +30,9 @@ router.post('/', (req, res) => {
 
 router.delete('/:traderId', (req, res) => {
     Trader.destroy({
-        where: { id: req.params.traderId },
-        limit: 1
+        where: { id: req.params.traderId }
     })
-        .then(dbTraderData => res.json(dbTraderData))
+        .then(data => res.status(200).json(data))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
