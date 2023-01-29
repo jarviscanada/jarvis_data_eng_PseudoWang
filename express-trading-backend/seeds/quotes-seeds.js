@@ -3,19 +3,19 @@ const { Quote } = require('../models');
 const quoteData = [
     {
         ticker: 'MEOW',
-        last_price: 12.2,
-        bid_price: 12.3,
-        bid_size: 20,
-        ask_price: 12.1,
-        ask_size: 15
+        lastPrice: 12.2,
+        bidPrice: 12.3,
+        bidSize: 20,
+        askPrice: 12.1,
+        askSize: 15
     },
     {
         ticker: 'WOOF',
-        last_price: 2.3,
-        bid_price: 14,
-        bid_size: 4,
-        ask_price: 12,
-        ask_size: 6
+        lastPrice: 2.3,
+        bidPrice: 14,
+        bidSize: 4,
+        askPrice: 12,
+        askSize: 6
     },
 ];
 

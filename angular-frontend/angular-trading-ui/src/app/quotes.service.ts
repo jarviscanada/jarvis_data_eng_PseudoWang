@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Quote } from './quote';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,38 +10,30 @@ export class QuotesService {
   quotesList: Quote[] = [
     {
       ticker: 'FB',
-      lastPrice: 319.48,
+      lastPrice: 320,
       bidPrice: 0,
       bidSize: 0,
-      askPrice: 13,
+      askPrice: 300,
       askSize: 400,
     },
     {
       ticker: 'AAPL',
-      lastPrice: 0,
+      lastPrice: 600,
       bidPrice: 0,
       bidSize: 0,
-      askPrice: 13,
+      askPrice: 580,
       askSize: 400,
     },
   ];
 
   constructor(private http: HttpClient) {}
 
-  private url = 'https://jarvis-express-trading-app.herokuapp.com/api/';
+  private url = 'http://localhost:3001/api/';
 
-  getQuotesAPI(): Quote[] {
-    let quotes = this.quotesList;
-    this.http.get<Quote[]>(this.url + 'quote/dailyList').subscribe(
-      (data) => {
-        console.log(data);
-        return true;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-    return quotes;
+  async getQuotesAPI(): Promise<Quote[]> {
+    return await this.http
+      .get<Quote[]>(this.url + 'quote/dailyList')
+      .toPromise();
   }
 
   getColumns(): string[] {
@@ -56,6 +48,6 @@ export class QuotesService {
   }
 
   getDataSource(): Observable<Quote[]> {
-    return of(this.quotesList);
+    return from(this.getQuotesAPI());
   }
 }

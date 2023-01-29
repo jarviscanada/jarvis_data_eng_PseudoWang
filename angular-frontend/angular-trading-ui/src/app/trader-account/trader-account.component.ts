@@ -38,12 +38,13 @@ export class TraderAccountComponent {
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
-    let receivedTrader = this._traderList.getTrader(Number(id));
-
-    if (receivedTrader) {
-      this.trader = receivedTrader;
-      this.ID = Number(id);
-    }
+    this._traderList.traderListSubject.subscribe((traders) => {
+      let receivedTrader = traders.find((t) => t.id === Number(id));
+      if (receivedTrader) {
+        this.trader = receivedTrader;
+        this.ID = Number(id);
+      }
+    });
   }
 
   deposit(): void {
@@ -60,8 +61,7 @@ export class TraderAccountComponent {
   }
 
   submit() {
-    let inputElements =
-      this.table.nativeElement.querySelectorAll('input');
+    let inputElements = this.table.nativeElement.querySelectorAll('input');
     let newInfo = {
       firstName: inputElements[0].value,
       lastName: inputElements[1].value,
@@ -71,7 +71,7 @@ export class TraderAccountComponent {
     };
 
     this._traderList.updateTrader(this.ID, newInfo);
-    DialogService.inform("Success!")
+    DialogService.inform('Success!');
     this.isDisabled = !this.isDisabled;
     this.buttonText = 'Update User Info';
   }

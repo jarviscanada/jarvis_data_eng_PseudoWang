@@ -36,7 +36,7 @@ export class TraderListService {
     },
   ];
 
-  private traderListSubject = new BehaviorSubject<Trader[]>(this.traderList);
+  traderListSubject = new BehaviorSubject<Trader[]>(this.traderList);
 
   private url = 'http://localhost:3001/api/';
 
@@ -121,6 +121,7 @@ export class TraderListService {
   getTrader(id: number): Trader | null {
     const index = this.traderList.findIndex((trader) => trader.id === id);
     if (index === -1) return null;
+    this.getTradersAPI();
     return this.traderList[index];
   }
 
@@ -132,14 +133,14 @@ export class TraderListService {
     this.traderList[index].email = newInfo.email;
     this.traderList[index].dob = newInfo.dob;
     this.traderList[index].country = newInfo.country;
-    this.traderListSubject.next(this.traderList);
+    this.getTradersAPI();
   }
 
   updateAmount(id: number, newAmount: number): boolean {
     const index = this.traderList.findIndex((trader) => trader.id === id);
     if (index === -1) return false;
     this.traderList[index].amount = newAmount;
-    this.traderListSubject.next(this.traderList);
+    this.getTradersAPI();
     return true;
   }
 }

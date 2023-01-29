@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from '../dialog.service';
 import { TraderListService } from '../trader-list.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-amount-withdraw',
@@ -10,15 +11,17 @@ import { TraderListService } from '../trader-list.service';
 export class AmountWithdrawComponent implements OnInit {
   id: number = 0;
   amount: number = 0;
+  private url = 'http://localhost:3001/api/';
 
   constructor(
     private _traderList: TraderListService,
-    private _dialog: DialogService
+    private _dialog: DialogService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {}
 
-  withdraw(): boolean {
+  withdraw(): void {
     let trader = this._traderList.getTrader(this.id);
     let traderAmount = trader ? trader.amount : -1;
 
@@ -28,16 +31,19 @@ export class AmountWithdrawComponent implements OnInit {
       traderAmount - this.amount < 0
     ) {
       DialogService.inform('Amount Incorrect!');
-      return false;
     }
-    if (trader)
-      if (this._traderList.updateAmount(this.id, trader.amount - this.amount)) {
-        DialogService.inform('Success!');
-        this._dialog.closeDialog();
-        return true;
-      }
-
-    DialogService.inform('Withdraw Failed!');
-    return false;
+    this.http
+      .post(this.url + `account/withdraw/${this.id}`, { amount: this.amount })
+      .subscribe(
+        (data: any) => {
+          DialogService.inform('Success!');
+          this._dialog.closeDialog();
+          this._traderList.updateAmount(data.trader_id, data.amount);
+        },
+        (err) => {
+          console.log(err);
+          DialogService.inform('Withdraw Failed!');
+        }
+      );
   }
 }

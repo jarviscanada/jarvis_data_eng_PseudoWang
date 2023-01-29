@@ -9,15 +9,17 @@ Transaction.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         amount: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        trader_id: {
+        traderId: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            field: 'trader_id'
         }
     },
     {

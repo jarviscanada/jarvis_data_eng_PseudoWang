@@ -4,12 +4,12 @@ const transactionData = [
     {
         id: 1,
         amount: 300,
-        trader_id: 1
+        traderId: 1
     },
     {
         id: 2,
         amount: -300,
-        trader_id: 1
+        traderId: 1
     }
 ];
 

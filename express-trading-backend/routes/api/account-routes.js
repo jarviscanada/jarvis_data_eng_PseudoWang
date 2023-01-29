@@ -4,9 +4,9 @@ const { Transaction } = require('../../models');
 
 router.get('/transactionHistory/:traderId', (req, res) => {
     Transaction.findAll({
-        where: { id: req.params.traderId }
+        where: { traderId: req.params.traderId }
     })
-        .then(dbTraderData => res.json(dbTraderData))
+        .then(data => res.json(data))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -14,8 +14,8 @@ router.get('/transactionHistory/:traderId', (req, res) => {
 });
 
 router.get('/accountBalance/:traderId', (req, res) => {
-    Trader.findByPk(req.params.traderId)
-        .then(dbTraderData => res.json(dbTraderData))
+    Trader.findByPk(req.params.traderId, { attributes: ['id', 'amount'] })
+        .then(data => res.json(data))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -23,11 +23,27 @@ router.get('/accountBalance/:traderId', (req, res) => {
 });
 
 router.post('/deposit/:traderId', (req, res) => {
-    res.status(500).json({ message: "not implemented" })
+    Trader.findByPk(req.params.traderId)
+        .then(trader => {
+            trader.increment('amount', { by: req.body.amount });
+            res.json({ id: trader.id, trader_id: trader.id, amount: trader.amount });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.post('/withdraw/:traderId', (req, res) => {
-    res.status(500).json({ message: "not implemented" })
+    Trader.findByPk(req.params.traderId)
+        .then(trader => {
+            trader.decrement('amount', { by: req.body.amount });
+            res.json({ id: trader.id, trader_id: trader.id, amount: trader.amount });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;

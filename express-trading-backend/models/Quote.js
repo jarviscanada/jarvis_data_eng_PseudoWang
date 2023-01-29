@@ -11,25 +11,30 @@ Quote.init(
             allowNull: false,
             primaryKey: true
         },
-        last_price: {
+        lastPrice: {
             type: DataTypes.DOUBLE,
-            allowNull: false
+            allowNull: false,
+            field: 'last_price'
         },
-        bid_price: {
+        bidPrice: {
             type: DataTypes.DOUBLE,
-            allowNull: false
+            allowNull: false,
+            field: 'bid_price'
         },
-        bid_size: {
+        bidSize: {
             type: DataTypes.DOUBLE,
-            allowNull: false
+            allowNull: false,
+            field: 'bid_size'
         },
-        ask_size: {
+        askPrice: {
             type: DataTypes.DOUBLE,
-            allowNull: false
+            allowNull: false,
+            field: 'ask_price'
         },
-        ask_price: {
+        askSize: {
             type: DataTypes.DOUBLE,
-            allowNull: false
+            allowNull: false,
+            field: 'ask_size'
         }
     },
     {
