@@ -24,7 +24,7 @@ export class TraderCreationComponent {
   ) {}
 
   submit(): void {
-    this._traderList.addTrader(this.traderForm.value);
+    this._traderList.createTraderAPI(this.traderForm.value);
     this._dialog.closeDialog();
   }
 

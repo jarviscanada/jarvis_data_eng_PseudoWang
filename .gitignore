@@ -1,21 +1,22 @@
+# files
 *.class
-*/*.class
+*.logs
 *.war
 *.ear
-*.logs
 *.iml
-.DS_Store
+.env
 .eclipse
+.DS_Store
+
+
+# folders
 .idea/
 .vscode/
-*/.DS_Store
-*/.eclipse
-*/.idea/
-*/.vscode/
-*/out/*
-*/out/*.out
-*/target/*/*.class
-target/
-out/
-node_modules/
+
+*out/
+*target/
+*node_modules/
+
+
+# configs
 package-lock.json

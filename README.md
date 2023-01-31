@@ -4,9 +4,9 @@ I graduated from York University in October 2022 with a degree in Computer Scien
 
 ## Skills
 
-**Proficient:** Git, GitHub, Java, JavaFX, Maven, Docker, Npm, Nginx, NodeJS, HTML, JavaScript, JQuery, CSS, Bootstrap, MySQL, PostgreSQL, MongoDB, CentOS, Ubuntu, Debian, Bash Script, Agile Development, Scrum Progress, Visual Studio Code, Adobe Photoshop, Vegas Pro, CapCut, Microsoft Office
+**Proficient:** Git, GitHub, Java, JavaFX, Maven, Docker, Npm, Nginx, NodeJS, Angular, Express, HTML, JavaScript, TypeScript, JQuery, CSS, Bootstrap, MySQL, PostgreSQL, MongoDB, CentOS, Ubuntu, Debian, Bash Script, Agile Development, Scrum Progress, Visual Studio Code, Adobe Photoshop, Vegas Pro, CapCut, Microsoft Office
 
-**Competent:** Angular, ExpressJS, Webpack, Canvas, C Language, Arduino, Processing, Oracle Cloud, Microsoft Azure, Amazon Web Service, Google Material Design, Visual Studio, Android Studio, Adobe Premiere Pro, Adobe After Effect
+**Competent:** Webpack, Canvas, C Language, Arduino, Processing, Oracle Cloud, Microsoft Azure, Amazon Web Service, Google Material Design, Visual Studio, Android Studio, Adobe Premiere Pro, Adobe After Effect
 
 **Familiar:** React, React Native, Vue, Vite, C#, PHP, Python, Flask, Django, Kotlin, Unity, Blender, C4D, ArcGIS
 

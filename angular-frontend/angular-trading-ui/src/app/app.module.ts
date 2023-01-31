@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,6 +25,8 @@ import { QuotesListComponent } from './quotes-list/quotes-list.component';
 import { TraderListComponent } from './trader-list/trader-list.component';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { TraderCreationComponent } from './trader-creation/trader-creation.component';
+import { AmountDepositComponent } from './amount-deposit/amount-deposit.component';
+import { AmountWithdrawComponent } from './amount-withdraw/amount-withdraw.component';
 
 @NgModule({
   declarations: [
@@ -33,17 +37,21 @@ import { TraderCreationComponent } from './trader-creation/trader-creation.compo
     TraderListComponent,
     TraderAccountComponent,
     TraderCreationComponent,
+    AmountDepositComponent,
+    AmountWithdrawComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatCommonModule,
     MatCardModule,
     MatIconModule,
+    MatListModule,
     MatInputModule,
     MatTableModule,
     MatButtonModule,

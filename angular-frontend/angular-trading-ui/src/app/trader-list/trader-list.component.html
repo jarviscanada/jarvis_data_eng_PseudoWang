@@ -24,6 +24,7 @@
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let element">
                 <mat-icon (click)="deleteTrader(element.id)">delete</mat-icon>
+                <mat-icon (click)="infoTrader(element.id)">info</mat-icon>
             </td>
         </ng-container>
 
