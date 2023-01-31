@@ -15,8 +15,11 @@ skills:
     - Npm
     - Nginx
     - NodeJS
+    - Angular
+    - Express
     - HTML
     - JavaScript
+    - TypeScript
     - JQuery
     - CSS
     - Bootstrap
@@ -35,8 +38,6 @@ skills:
     - CapCut
     - Microsoft Office
   competent:
-    - Angular
-    - ExpressJS
     - Webpack
     - Canvas
     - C Language

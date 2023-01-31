@@ -64,8 +64,6 @@
   ],
   "skills": {
     "competent": [
-      "Angular",
-      "ExpressJS",
       "Webpack",
       "Canvas",
       "C Language",
@@ -106,8 +104,11 @@
       "Npm",
       "Nginx",
       "NodeJS",
+      "Angular",
+      "Express",
       "HTML",
       "JavaScript",
+      "TypeScript",
       "JQuery",
       "CSS",
       "Bootstrap",
