@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Trader } from './trader';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -6,16 +7,20 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class TraderListService {
+  constructor(private http: HttpClient) {
+    this.getTradersAPI();
+  }
+
   traderList: Trader[] = [
     {
       key: '1',
       id: 1,
-      firstName: 'Mike',
+      firstName: 'NonAPI',
       lastName: 'Spencer',
       dob: new Date().toLocaleDateString(),
       country: 'Canada',
       email: 'mike@email.com',
-      amount: 0,
+      amount: 100,
       actions: { id: 1 },
     },
     {
@@ -26,11 +31,51 @@ export class TraderListService {
       dob: new Date().toLocaleDateString(),
       country: 'USA',
       email: 'hellen@email.com',
-      amount: 0,
+      amount: 50,
       actions: { id: 2 },
     },
   ];
-  private traderListSubject = new BehaviorSubject<Trader[]>(this.traderList);
+
+  traderListSubject = new BehaviorSubject<Trader[]>(this.traderList);
+
+  private url = 'http://localhost:3001/api/';
+
+  getTradersAPI(): void {
+    this.http
+      .get<Trader[]>(this.url + 'trader')
+      .toPromise()
+      .then(
+        (data) => {
+          this.traderList = data;
+          this.traderListSubject.next(this.traderList);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+  }
+
+  createTraderAPI(trader: any): void {
+    const newTrader = {
+      firstName: trader.firstName,
+      lastName: trader.lastName,
+      dob: trader.dob.toLocaleDateString(),
+      country: trader.country,
+      email: trader.email,
+      amount: 0,
+    };
+    this.http
+      .post<Trader[]>(this.url + 'trader', newTrader)
+      .toPromise()
+      .then(() => this.getTradersAPI());
+  }
+
+  deleteTraderAPI(id: number): void {
+    this.http
+      .delete<Trader[]>(this.url + 'trader/' + id)
+      .toPromise()
+      .then(() => this.getTradersAPI());
+  }
 
   getDataSource(): Observable<Trader[]> {
     return this.traderListSubject.asObservable();
@@ -71,5 +116,31 @@ export class TraderListService {
     };
     this.traderList.push(newTrader);
     this.traderListSubject.next(this.traderList);
+  }
+
+  getTrader(id: number): Trader | null {
+    const index = this.traderList.findIndex((trader) => trader.id === id);
+    if (index === -1) return null;
+    this.getTradersAPI();
+    return this.traderList[index];
+  }
+
+  updateTrader(id: number, newInfo: any): void {
+    // I'll temporarily ignore data verification for this sample project
+    const index = this.traderList.findIndex((trader) => trader.id === id);
+    this.traderList[index].firstName = newInfo.firstName;
+    this.traderList[index].lastName = newInfo.lastName;
+    this.traderList[index].email = newInfo.email;
+    this.traderList[index].dob = newInfo.dob;
+    this.traderList[index].country = newInfo.country;
+    this.getTradersAPI();
+  }
+
+  updateAmount(id: number, newAmount: number): boolean {
+    const index = this.traderList.findIndex((trader) => trader.id === id);
+    if (index === -1) return false;
+    this.traderList[index].amount = newAmount;
+    this.getTradersAPI();
+    return true;
   }
 }

@@ -4,6 +4,7 @@ import { DialogService } from '../dialog.service';
 import { Trader } from '../trader';
 import { MatTable } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trader-list',
@@ -15,7 +16,7 @@ export class TraderListComponent {
   dataSource = new MatTableDataSource<Trader>();
   displayedColumns: string[] = this._traderList.getColumns();
 
-  constructor(private _traderList: TraderListService) {}
+  constructor(private _traderList: TraderListService, private router: Router) {}
 
   ngOnInit() {
     this._traderList
@@ -24,12 +25,14 @@ export class TraderListComponent {
   }
 
   deleteTrader(id: number): void {
-    if (DialogService.confirm('Delete Selected Trader?'))
-      if (this._traderList.deleteTrader(id)) {
-        this.dataSource.data = this.dataSource.data.filter((d) => d.id !== id);
-        this.traderTable.renderRows();
-      } else {
-        DialogService.inform('Trader Not Found!');
-      }
+    if (DialogService.confirm('Delete Selected Trader?')) {
+      this._traderList.deleteTraderAPI(id);
+      this.dataSource.data = this.dataSource.data.filter((d) => d.id !== id);
+      this.traderTable.renderRows();
+    }
+  }
+
+  infoTrader(id: number): void {
+    this.router.navigate(['/trader-account', id]);
   }
 }
