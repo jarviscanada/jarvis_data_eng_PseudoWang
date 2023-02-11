@@ -20,9 +20,6 @@ public class JDBCExecutor {
                 logger.info(resultSet.getString(1));
                 logger.info(resultSet.getString(2));
                 logger.info(resultSet.getString(3));
-                System.out.println(resultSet.getString(1));
-                System.out.println(resultSet.getString(2));
-                System.out.println(resultSet.getString(3));
             }
             statement.close();
             connection.close();
