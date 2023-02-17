@@ -1,6 +1,6 @@
 package ca.jrvs.apps.twitter.dao;
 
-public interface CrdDao<T, ID> {
+public interface CrdDao<T, K> {
 
   /**
    * Create an entity(Tweet) to the underlying storage
@@ -14,12 +14,12 @@ public interface CrdDao<T, ID> {
    * @param id entity id
    * @return Tweet entity
    */
-  T findById(ID id);
+  T findById(K id);
 
   /**
    * Delete an entity(Tweet) by its ID
    * @param id of the entity to be deleted
    * @return deleted entity
    */
-  T deleteById(ID id);
+  T deleteById(K id);
 }
