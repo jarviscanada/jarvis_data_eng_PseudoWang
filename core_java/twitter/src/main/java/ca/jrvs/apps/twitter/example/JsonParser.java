@@ -18,9 +18,9 @@ public class JsonParser {
         return m.writeValueAsString(obj);
     }
 
-    public static <T> T toObject(String json, Class<T> clazz) throws IOException {
+    public static <T> T toObject(String json, Class<T> cls) throws IOException {
         ObjectMapper m = new ObjectMapper();
-        return m.readValue(json, clazz);
+        return m.readValue(json, cls);
     }
 
     public static final String CSTR = "{\n"
