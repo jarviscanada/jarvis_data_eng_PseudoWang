@@ -25,20 +25,20 @@ public class TwitterHttpHelper implements HttpHelper {
     }
 
     @Override
-    public HttpResponse httpPost(URI uri) {
+    public HttpResponse httpPost(URI uri) throws TwitterRuntimeException {
         try {
             return executeHttpRequest(HttpMethod.POST, uri, null);
         } catch (OAuthException | IOException | IllegalAccessException e) {
-            throw new RuntimeException("Failed To Execute");
+            throw new TwitterRuntimeException("Failed To Execute");
         }
     }
 
     @Override
-    public HttpResponse httpGet(URI uri) {
+    public HttpResponse httpGet(URI uri) throws TwitterRuntimeException {
         try {
             return executeHttpRequest(HttpMethod.GET, uri, null);
         } catch (OAuthException | IOException | IllegalAccessException e) {
-            throw new RuntimeException("Failed To Execute");
+            throw new TwitterRuntimeException("Failed To Execute");
         }
     }
 
