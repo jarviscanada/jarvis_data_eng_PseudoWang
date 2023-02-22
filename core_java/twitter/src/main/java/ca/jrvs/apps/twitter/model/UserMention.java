@@ -3,7 +3,6 @@ package ca.jrvs.apps.twitter.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserMention {
-
     @JsonProperty("name")
     private String name;
 
@@ -14,7 +13,7 @@ public class UserMention {
     private long id;
 
     @JsonProperty("id_str")
-    private String idString;
+    private String idStr;
 
     @JsonProperty("indices")
     private int[] indices;
@@ -43,12 +42,12 @@ public class UserMention {
         this.id = id;
     }
 
-    public String getIdString() {
-        return idString;
+    public String getIdStr() {
+        return idStr;
     }
 
-    public void setIdString(String idString) {
-        this.idString = idString;
+    public void setIdStr(String idStr) {
+        this.idStr = idStr;
     }
 
     public int[] getIndices() {

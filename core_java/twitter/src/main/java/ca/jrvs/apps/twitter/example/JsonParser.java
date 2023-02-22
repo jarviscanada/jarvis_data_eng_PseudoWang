@@ -1,11 +1,9 @@
 package ca.jrvs.apps.twitter.example;
 
 import java.io.IOException;
-
 import com.fasterxml.jackson.annotation.JsonInclude.*;
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
-
 import ca.jrvs.apps.twitter.example.dto.Company;
 
 public class JsonParser {

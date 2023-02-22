@@ -18,7 +18,7 @@ public class TwitterHttpHelper implements HttpHelper {
     private OAuthConsumer consumer;
     private HttpClient client;
 
-    public TwitterHttpHelper(String consumerKey, String consumerSecret, String accessToken, String tokenSecret) {
+    protected TwitterHttpHelper(String consumerKey, String consumerSecret, String accessToken, String tokenSecret) {
         consumer = new CommonsHttpOAuthConsumer(consumerKey, consumerSecret);
         consumer.setTokenWithSecret(accessToken, tokenSecret);
         client = HttpClientBuilder.create().build();
@@ -29,7 +29,7 @@ public class TwitterHttpHelper implements HttpHelper {
         try {
             return executeHttpRequest(HttpMethod.POST, uri, null);
         } catch (OAuthException | IOException | IllegalAccessException e) {
-            throw new TwitterRuntimeException("Failed To Execute");
+            throw new TwitterRuntimeException("Failed To Post");
         }
     }
 
@@ -38,11 +38,11 @@ public class TwitterHttpHelper implements HttpHelper {
         try {
             return executeHttpRequest(HttpMethod.GET, uri, null);
         } catch (OAuthException | IOException | IllegalAccessException e) {
-            throw new TwitterRuntimeException("Failed To Execute");
+            throw new TwitterRuntimeException("Failed To Get");
         }
     }
 
-    private HttpResponse executeHttpRequest(HttpMethod method, URI uri, StringEntity se)
+    private HttpResponse executeHttpRequest(HttpMethod method, URI uri, StringEntity entity)
             throws OAuthException, IOException, IllegalAccessException {
         if (method == HttpMethod.GET) {
             HttpGet request = new HttpGet(uri);
@@ -50,9 +50,8 @@ public class TwitterHttpHelper implements HttpHelper {
             return client.execute(request);
         } else if (method == HttpMethod.POST) {
             HttpPost request = new HttpPost(uri);
-            if (se != null) {
-                request.setEntity(se);
-            }
+            if (entity != null)
+                request.setEntity(entity);
             consumer.sign(request);
             return client.execute(request);
         } else {

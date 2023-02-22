@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+// https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/object-model/tweet
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "created_at",
