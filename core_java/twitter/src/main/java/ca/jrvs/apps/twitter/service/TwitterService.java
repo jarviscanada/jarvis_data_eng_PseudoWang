@@ -27,10 +27,10 @@ public class TwitterService implements Service {
         }
         if (tweet.getCoordinates() != null) {
             if (longitude < -180.0 || longitude > 180.0)
-                throw new IllegalArgumentException("Longitude range out of range");
+                throw new IllegalArgumentException("Longitude Invalid Range");
 
             if (latitude < -90 || latitude > 90)
-                throw new IllegalArgumentException("Latitude out of range");
+                throw new IllegalArgumentException("Latitude Invalid Range");
         }
     }
 

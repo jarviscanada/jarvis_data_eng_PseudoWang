@@ -28,7 +28,7 @@ public class TwitterHttpHelper implements HttpHelper {
     public HttpResponse httpPost(URI uri) throws TwitterRuntimeException {
         try {
             return executeHttpRequest(HttpMethod.POST, uri, null);
-        } catch (OAuthException | IOException | IllegalAccessException e) {
+        } catch (OAuthException | IOException e) {
             throw new TwitterRuntimeException("Failed To Post");
         }
     }
@@ -37,13 +37,13 @@ public class TwitterHttpHelper implements HttpHelper {
     public HttpResponse httpGet(URI uri) throws TwitterRuntimeException {
         try {
             return executeHttpRequest(HttpMethod.GET, uri, null);
-        } catch (OAuthException | IOException | IllegalAccessException e) {
+        } catch (OAuthException | IOException e) {
             throw new TwitterRuntimeException("Failed To Get");
         }
     }
 
     private HttpResponse executeHttpRequest(HttpMethod method, URI uri, StringEntity entity)
-            throws OAuthException, IOException, IllegalAccessException {
+            throws OAuthException, IOException, TwitterRuntimeException {
         if (method == HttpMethod.GET) {
             HttpGet request = new HttpGet(uri);
             consumer.sign(request);
@@ -55,7 +55,7 @@ public class TwitterHttpHelper implements HttpHelper {
             consumer.sign(request);
             return client.execute(request);
         } else {
-            throw new IllegalAccessException("Unknown HTTP Method: " + method.name());
+            throw new TwitterRuntimeException("Unknown HTTP Method: " + method.name());
         }
     }
 }

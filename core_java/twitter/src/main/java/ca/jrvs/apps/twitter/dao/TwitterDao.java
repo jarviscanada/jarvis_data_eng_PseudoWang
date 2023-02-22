@@ -48,7 +48,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
 
         int status = response.getStatusLine().getStatusCode();
         if (status != code)
-            throw new TwitterRuntimeException("Unexpected HTTP Status:" + status);
+            throw new TwitterRuntimeException("Unexpected HTTP Status: " + status);
 
         if (response.getEntity() == null)
             throw new TwitterRuntimeException("Empty Response Body");
@@ -73,7 +73,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
         try {
             uri = getPostUri(entity);
         } catch (URISyntaxException e) {
-            throw new IllegalArgumentException("Invalid Tweet Entity", e);
+            throw new TwitterRuntimeException("Invalid Tweet Entity", e);
         }
         HttpResponse response = httpHelper.httpPost(uri);
         return parseResponseBody(response, HTTP_OK);
@@ -85,7 +85,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
         try {
             uri = getShowUri(s);
         } catch (URISyntaxException e) {
-            throw new IllegalArgumentException("Invalid Tweet ID", e);
+            throw new TwitterRuntimeException("Invalid Tweet ID", e);
         }
         HttpResponse response = httpHelper.httpGet(uri);
         return parseResponseBody(response, HTTP_OK);
@@ -97,7 +97,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
         try {
             uri = getDelUri(s);
         } catch (URISyntaxException e) {
-            throw new IllegalArgumentException("Invalid Tweet ID", e);
+            throw new TwitterRuntimeException("Invalid Tweet ID", e);
         }
         HttpResponse response = httpHelper.httpPost(uri);
         return parseResponseBody(response, HTTP_OK);
