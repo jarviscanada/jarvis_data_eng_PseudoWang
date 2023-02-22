@@ -47,14 +47,8 @@ public class TwitterDao implements CrdDao<Tweet, String> {
         Tweet tweet = null;
 
         int status = response.getStatusLine().getStatusCode();
-        if (status != code) {
-            try {
-                System.out.println(EntityUtils.toString(response.getEntity()));
-            } catch (IOException e) {
-                throw new TwitterRuntimeException("Response No Entity", e);
-            }
+        if (status != code)
             throw new TwitterRuntimeException("Unexpected HTTP Status:" + status);
-        }
 
         if (response.getEntity() == null)
             throw new TwitterRuntimeException("Empty Response Body");
