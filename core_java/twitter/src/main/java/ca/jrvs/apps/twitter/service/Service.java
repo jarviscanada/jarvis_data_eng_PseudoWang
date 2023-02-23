@@ -11,9 +11,7 @@ public interface Service {
    *
    * @param tweet tweet to be created
    * @return created tweet
-   * @throws TwitterRuntimeException
-   *
-   * @throws IllegalArgumentException if text exceed max number of allowed characters or lat/long out of range
+   * @throws TwitterRuntimeException if text exceed max number of allowed characters or lat/long out of range
    */
   Tweet postTweet(Tweet tweet) throws TwitterRuntimeException;
 
@@ -23,20 +21,16 @@ public interface Service {
    * @param id tweet id
    * @param fields set fields not in the list to null
    * @return Tweet object which is returned by the Twitter API
-   * @throws TwitterRuntimeException
-   *
-   * @throws IllegalArgumentException if id or fields param is invalid
+   * @throws TwitterRuntimeException if id or fields param is invalid
    */
   Tweet showTweet(String id, String[] fields) throws TwitterRuntimeException;
 
   /**
-   * Delete Tweet(s) by id(s).
+   * Delete Tweet(s) by id(s)
    *
    * @param ids tweet IDs which will be deleted
    * @return A list of Tweets
-   * @throws TwitterRuntimeException
-   *
-   * @throws IllegalArgumentException if one of the IDs is invalid.
+   * @throws TwitterRuntimeException if one of the IDs is invalid
    */
   List<Tweet> deleteTweets(String[] ids) throws TwitterRuntimeException;
 
