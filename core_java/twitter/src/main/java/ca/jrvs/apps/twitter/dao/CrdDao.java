@@ -1,6 +1,6 @@
 package ca.jrvs.apps.twitter.dao;
 
-import ca.jrvs.apps.twitter.dao.helper.TwitterRuntimeException;
+import ca.jrvs.apps.twitter.util.TwitterRuntimeException;
 
 public interface CrdDao<T, K> {
 

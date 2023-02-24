@@ -3,6 +3,8 @@ package ca.jrvs.apps.twitter.dao.helper;
 import java.net.URI;
 import org.apache.http.HttpResponse;
 
+import ca.jrvs.apps.twitter.util.TwitterRuntimeException;
+
 public interface HttpHelper {
 
   /**

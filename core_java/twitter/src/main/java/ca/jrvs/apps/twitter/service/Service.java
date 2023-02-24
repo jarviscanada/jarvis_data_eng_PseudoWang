@@ -1,7 +1,8 @@
 package ca.jrvs.apps.twitter.service;
 
-import ca.jrvs.apps.twitter.dao.helper.TwitterRuntimeException;
 import ca.jrvs.apps.twitter.model.Tweet;
+import ca.jrvs.apps.twitter.util.TwitterRuntimeException;
+
 import java.util.List;
 
 public interface Service {
