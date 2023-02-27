@@ -3,7 +3,6 @@ package ca.jrvs.apps.twitter.service;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.util.TwitterRuntimeException;
 import ca.jrvs.apps.twitter.dao.CrdDao;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
