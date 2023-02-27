@@ -13,7 +13,7 @@ public class TwitterService implements Service {
     private CrdDao<Tweet, String> twitterDao;
 
     @Autowired
-    protected TwitterService(CrdDao<Tweet, String> twitterDao) {
+    public TwitterService(CrdDao<Tweet, String> twitterDao) {
         this.twitterDao = twitterDao;
     }
 
