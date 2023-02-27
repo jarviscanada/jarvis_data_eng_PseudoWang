@@ -16,7 +16,7 @@ public class TwitterService implements Service {
         this.twitterDao = twitterDao;
     }
 
-    private void validateTweet(Tweet tweet) {
+    private void validateTweet(Tweet tweet) throws TwitterRuntimeException {
         final int TWITTER_LENGTH = 200;
         String tweetText = tweet.getText();
         Double latitude = tweet.getCoordinates().getCoordinates().get(0);
@@ -27,10 +27,10 @@ public class TwitterService implements Service {
         }
         if (tweet.getCoordinates() != null) {
             if (longitude < -180.0 || longitude > 180.0)
-                throw new IllegalArgumentException("Longitude Invalid Range");
+                throw new TwitterRuntimeException("Longitude Invalid Range");
 
             if (latitude < -90 || latitude > 90)
-                throw new IllegalArgumentException("Latitude Invalid Range");
+                throw new TwitterRuntimeException("Latitude Invalid Range");
         }
     }
 
@@ -50,7 +50,7 @@ public class TwitterService implements Service {
         if (isValidID(id))
             return twitterDao.findById(id);
         else
-            throw new IllegalArgumentException("Invalid ID");
+            throw new TwitterRuntimeException("Invalid ID");
     }
 
     @Override
@@ -60,7 +60,7 @@ public class TwitterService implements Service {
             if (isValidID(id))
                 deletedTweets.add(twitterDao.deleteById(id));
             else
-                throw new IllegalArgumentException("Invalid ID");
+                throw new TwitterRuntimeException("Invalid ID");
         return deletedTweets;
     }
 }

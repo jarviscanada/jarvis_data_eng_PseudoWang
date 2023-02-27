@@ -9,6 +9,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @org.springframework.stereotype.Repository
 public class TwitterDao implements CrdDao<Tweet, String> {
@@ -23,6 +24,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
 
     private HttpHelper httpHelper;
 
+    @Autowired
     public TwitterDao(HttpHelper httpHelper) {
         this.httpHelper = httpHelper;
     }

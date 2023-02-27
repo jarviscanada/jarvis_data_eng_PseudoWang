@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.*;
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
 
-@org.springframework.stereotype.Component
 public class JsonUtil {
     private JsonUtil() {
     }
