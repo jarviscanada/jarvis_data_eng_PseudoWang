@@ -4,12 +4,10 @@ import ca.jrvs.apps.twitter.util.JsonUtil;
 import ca.jrvs.apps.twitter.util.TwitterRuntimeException;
 import ca.jrvs.apps.twitter.controller.Controller;
 import ca.jrvs.apps.twitter.controller.TwitterController;
-import ca.jrvs.apps.twitter.dao.CrdDao;
 import ca.jrvs.apps.twitter.dao.TwitterDao;
 import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
 import ca.jrvs.apps.twitter.dao.helper.TwitterHttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
-import ca.jrvs.apps.twitter.service.Service;
 import ca.jrvs.apps.twitter.service.TwitterService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,8 +64,8 @@ public class TwitterCLIApp {
         String tokenSecret = System.getenv("tokenSecret");
         System.out.println(consumerKey + "|" + consumerSecret + "|" + accessToken + "|" + tokenSecret);
         HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
-        CrdDao<Tweet, String> dao = new TwitterDao(httpHelper);
-        Service service = new TwitterService(dao);
+        TwitterDao dao = new TwitterDao(httpHelper);
+        TwitterService service = new TwitterService(dao);
         Controller controller = new TwitterController(service);
         TwitterCLIApp app = new TwitterCLIApp(controller);
 
