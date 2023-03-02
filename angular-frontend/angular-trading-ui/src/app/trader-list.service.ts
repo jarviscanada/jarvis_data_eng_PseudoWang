@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Trader } from './trader';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

@@ -2,8 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { TraderListService } from '../trader-list.service';
 import { DialogService } from '../dialog.service';
 import { Trader } from '../trader';
-import { MatTable } from '@angular/material/table';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 
 @Component({
