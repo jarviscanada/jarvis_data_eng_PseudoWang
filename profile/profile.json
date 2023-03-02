@@ -36,6 +36,15 @@
       "description": "This project is used to record and persist the hardware specifications and resource usage of a Linux cluster in PostgreSQL. I implemented a MVP for the Jarvis Linux Cluster Administration in this project, which included single host scripts that were used to record and persist hardware specifications and resource usage of a Linux cluster into PostgreSQL. This involved writing scripts to collect server hardware information, track server usage data, and launch the PostgreSQL service and its accompanying docker container. Through my efforts, I was able to successfully deliver a functional MVP for the Jarvis Linux Cluster Administration.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "I developed the Twitter CRUD Application using Java, which enables users to post, retrieve, and delete tweets on their Twitter Developer Account. The application utilizes the official Twitter REST APIs for these functionalities. To implement the application, I followed the Model-View-Controller (MVC) architectural pattern, which includes a controller layer, service layer, data access object layer (DAO), and model. The application was built using Java, Maven, Twitter's REST APIs, HTTP \u0026 JSON, JUnit and Mockito for testing, Spring for dependency injection, and Docker for containerization, which enables the application to be easily deployed on different systems.",
+        "I developed a Java application that utilizes Java Database Connectivity (JDBC) to connect to and interact with a PostgreSQL database. With this application, clients can perform various operations such as Create, Read, Update, and Delete (CRUD) on the database. I implemented the application using Java, JDBC, and Maven to manage dependencies. Furthermore, to ensure portability and easy deployment, I containerized the application using Docker.",
+        "I have created a Java application that emulates the functionality of the Linux grep command. The application allows for searching files in a directory and matching strings within the files, utilizing regular expressions. The matches are then outputted to another file. The application was designed using Java 8's powerful Lambda and Stream APIs, and its dependencies were managed through Maven. It was also containerized using Docker, ensuring that it can be easily deployed and run on a variety of systems."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
     }
   ],
   "name": "Pseudo Wang",
@@ -95,23 +104,23 @@
       "ArcGIS"
     ],
     "proficient": [
-      "Git",
-      "GitHub",
       "Java",
       "JavaFX",
       "Maven",
-      "Docker",
-      "Npm",
-      "Nginx",
-      "NodeJS",
-      "Angular",
-      "Express",
-      "HTML",
       "JavaScript",
       "TypeScript",
+      "Angular",
       "JQuery",
+      "HTML",
       "CSS",
       "Bootstrap",
+      "NodeJS",
+      "Express",
+      "Npm",
+      "Docker",
+      "Git",
+      "GitHub",
+      "Nginx",
       "MySQL",
       "PostgreSQL",
       "MongoDB",
@@ -128,5 +137,5 @@
       "Microsoft Office"
     ]
   },
-  "summary": "I graduated from York University in October 2022 with a degree in Computer Science. Prior to university, I worked in a startup company called Emerge Labs building the front-end of projects for different customers. In this company, I learned to communicate commercially with customers and colleagues and to cooperate with other developers. During my university education, I worked as a contracted data structures lecturer at an off-campus tutoring institution called Future Up. By engaging in this process, I significantly enhanced my explanatory abilities, enabling me to more effectively facilitate my students' understanding of the material. I am a self-starter and motivated team player with the ability to accomplish tasks independently. Also, with reliable communication ability and strong coding skills, I'm always the team leader in various projects. Now I'm working with Jarvis and continue learning modern advanced technologies. As a software engineering developer, my long-term career goal is to attain a leadership position as a lead software engineer at a prestigious technology firm. To achieve this objective, I am actively working to augment my skills through hands-on experience and seeking out opportunities within my current company to gain valuable management experience through leadership roles."
+  "summary": "I graduated from York University in October 2022 with a degree in Computer Science. Prior to university, I worked in a startup company called Emerge Labs building the front-end of projects for different customers. In this company, I learned to communicate commercially with customers and colleagues and to cooperate with other developers. During my university education, Java was the primary programming language I used, and I wrote many of my school projects in Java. This experience was not only valuable for my coursework but also helped me excel in my role as a contracted data structures lecturer at Future Up, where I taught students how to write efficient and effective code in Java. Through my tutoring role, I was able to solidify my understanding of the language, develop the ability to explain complex concepts in a simple and approachable manner, and significantly enhance my explanatory abilities, enabling me to more effectively facilitate my students' understanding of the material. I am a self-starter and motivated team player with the ability to accomplish tasks independently. Also, with reliable communication ability and strong coding skills, I'm always the team leader in various projects. Now I'm working with Jarvis and continue learning modern advanced technologies. As a software engineering developer, my long-term career goal is to attain a leadership position as a lead software engineer at a prestigious technology firm. To achieve this objective, I am actively working to augment my skills through hands-on experience and seeking out opportunities within my current company to gain valuable management experience through leadership roles."
 }
