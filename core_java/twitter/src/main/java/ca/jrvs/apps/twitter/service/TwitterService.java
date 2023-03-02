@@ -6,13 +6,11 @@ import ca.jrvs.apps.twitter.dao.TwitterDao;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @org.springframework.stereotype.Service
 public class TwitterService implements Service {
     private TwitterDao twitterDao;
 
-    @Autowired
     public TwitterService(TwitterDao twitterDao) {
         this.twitterDao = twitterDao;
     }

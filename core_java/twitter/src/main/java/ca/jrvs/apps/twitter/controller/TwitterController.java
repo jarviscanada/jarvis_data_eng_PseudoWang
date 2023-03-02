@@ -4,7 +4,6 @@ import ca.jrvs.apps.twitter.model.Coordinates;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.service.TwitterService;
 import ca.jrvs.apps.twitter.util.TwitterRuntimeException;
-import org.springframework.beans.factory.annotation.Autowired;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,7 +13,6 @@ public class TwitterController implements Controller {
     private static final String COMMA = ",";
     TwitterService service;
 
-    @Autowired
     public TwitterController(TwitterService service) {
         this.service = service;
     }
