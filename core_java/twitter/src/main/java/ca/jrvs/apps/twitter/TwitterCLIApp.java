@@ -49,7 +49,7 @@ public class TwitterCLIApp {
 
     private void printTweet(Tweet tweet) throws TwitterRuntimeException {
         try {
-            JsonUtil.toJson(tweet, true, false);
+            System.out.println(JsonUtil.toJson(tweet, true, false));
         } catch (JsonProcessingException e) {
             throw new TwitterRuntimeException("Convert Failed", e);
         }

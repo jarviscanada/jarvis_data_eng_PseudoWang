@@ -45,7 +45,6 @@ public class TwitterService implements Service {
     public Tweet postTweet(Tweet tweet) throws TwitterRuntimeException {
         validateTweet(tweet);
         return twitterDao.create(tweet);
-
     }
 
     @Override
